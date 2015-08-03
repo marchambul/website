@@ -1,0 +1,8 @@
+node_modules/
+resources/
+plugins/
+platforms/
+.tmp/
+/www
+*.DS_Store
+/hooks
