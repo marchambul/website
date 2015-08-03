@@ -2,8 +2,9 @@
 title: This is a Draft
 category: Meta
 excerpt: A sample draft post.
-
+published: true
 ---
+
 | ![Yann](img/vendeurs/yann-le-maraicher.jpg) | **Yann le marchand de rêve** <button class="btn btn-default button-table" type="button"> <i class="fa fa-eye fa-fw"></i><span> &nbsp;voir sa page </span></button>|
 
 
