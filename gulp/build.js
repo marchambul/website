@@ -23,9 +23,9 @@ gulp.task('html', ['partials'], function(done) {
     addRootSlash: false
   }
   var assets = $.useref.assets();
-  var htmlFilter = $.filter('**/*.html');
-  var jsFilter = $.filter('**/*.js');
-  var cssFilter = $.filter('**/*.css');
+  var htmlFilter = $.filter(paths.tmp + 'index.html');
+  var jsFilter = $.filter(paths.tmp + '**/*.js');
+  var cssFilter = $.filter(paths.tmp + '**/*.css');
 
   return gulp.src(paths.tmp + '/index.html')
     .pipe($.inject(partialsInjectFile, partialsInjectOptions))

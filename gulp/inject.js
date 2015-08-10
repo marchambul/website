@@ -2,7 +2,21 @@ var gulp = require('gulp');
 var paths = gulp.paths;
 var $ = require('gulp-load-plugins')();
 var wiredep = require('wiredep').stream;
-var markdown = require('markdown');
+var marked = require('marked');
+var jade = require('jade');
+
+
+marked.setOptions({
+  renderer: new marked.Renderer(),
+  gfm: true,
+  tables: true,
+  breaks: false,
+  pedantic: false,
+  sanitize: true,
+  smartLists: true,
+  smartypants: false
+});
+
 
 var injectOptions = {
   addRootSlash: false,
@@ -12,7 +26,7 @@ var injectOptions = {
 /************************************************************************************************************
 ************************************************* Gulp tasks ************************************************
 *************************************************************************************************************/
-gulp.task('inject', ['injectApi'], function() {
+gulp.task('inject', ['sass','babel','jade'], function() {
   return gulp.src(paths.html)
     .pipe($.plumber())
     .pipe($.inject(gulp.src([paths.tmp + '/**/*.css', '!' + paths.tmp + '/css/vendor.mobile.css'], {read: false}),injectOptions))
@@ -21,16 +35,4 @@ gulp.task('inject', ['injectApi'], function() {
     .pipe($.inject(gulp.src([paths.tmp + '/**/*.js']).pipe($.angularFilesort()),injectOptions))
     .pipe(wiredep())
     .pipe(gulp.dest(paths.tmp));
-});
-
-gulp.task('injectApi', ['sass','babel','jade'], function() {
-  return gulp.src('src/api/*.json')
-    .pipe($.fileInclude({
-      prefix: '@@',
-      basepath: '@file',
-      filters: {
-        markdown: markdown.markdown.toHTML
-      }
-  }))
-    .pipe(gulp.dest(paths.tmp + '/api'));
 });

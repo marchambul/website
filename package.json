@@ -26,6 +26,7 @@
     "gulp-jade": "^1.0.1",
     "gulp-load-plugins": "^1.0.0-rc.1",
     "gulp-main-bower-files": "^1.2.0",
+    "gulp-marked": "^1.0.0",
     "gulp-minify-html": "^1.0.4",
     "gulp-ng-annotate": "^1.0.0",
     "gulp-plumber": "^1.0.1",
@@ -41,6 +42,7 @@
     "jade": "^1.11.0",
     "main-bower-files": "^2.9.0",
     "markdown": "^0.5.0",
+    "marked": "^0.3.5",
     "marky-markdown": "^5.3.0",
     "shelljs": "^0.3.0",
     "wiredep": "^3.0.0-beta"
