@@ -16,6 +16,7 @@
     "del": "^1.2.0",
     "gulp-angular-filesort": "^1.0.4",
     "gulp-angular-templatecache": "^1.7.0",
+    "gulp-awspublish": "^2.0.2",
     "gulp-babel": "^5.1.0",
     "gulp-csso": "^1.0.0",
     "gulp-debug": "^2.0.1",

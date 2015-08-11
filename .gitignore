@@ -6,3 +6,4 @@ platforms/
 /www
 *.DS_Store
 /hooks
+.awspublish-*
