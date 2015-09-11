@@ -27,7 +27,9 @@
 
 	<body>
 		@@include('includes/navbar.html')
-    @@include('home/map/map.html')
+    <section id="main-section" ui-view>
+      @@include('home/map/map.html')
+    </section>
     @@include('includes/footer.html')
     <!-- build:js(.tmp) js/vendor.js -->
     <!-- bower:js -->
