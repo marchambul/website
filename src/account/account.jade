@@ -1,6 +1,13 @@
-h1 Account 
-
-table.table
- tr
-  td(ng-repeat="round in rounds")
-    span {{round.name}} - {{round.totalPrice}} €
+.container
+  //- tabset(justified="true" vertical="true" type="pills")
+  //-   tab(heading="Tournées à venir") Justified content
+  //-   tab(heading="Tournées passées") 
+  //-     table.table
+  //-      tr
+  //-       td(ng-repeat="round in rounds")
+  //-         span {{round.name}} - {{round.totalPrice}} €
+  //
+  
+  button.btn.btn-link(type="button" ui-sref="newRound") 
+    i.fa.fa-plus.fa-fw
+    span Nouvelle tournée
