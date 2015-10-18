@@ -1,15 +1,125 @@
-[
-  {
-    "content": "@@include(jade('./rounds/tournee.jadetemplate',
-      {
-        'fruits' : ['tomates','pommes','pêches']
-      }))"
-  }
-]
-h1 Test
-
-ul
-  for fruit in fruits
-    li= fruit
-  else
-    li sorry, no fruit!
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1.6723922,
+                    48.103850800000004,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "Parvis de la Gare",
+                "description": "Dimanche: 17h-20h"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1.676681,
+                    48.1060485,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "Esplanade Charles de Gaulle",
+                "description": "Samedi: 15h-18h"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1.6631547,
+                    48.0939127,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "Place du Souvenir",
+                "description": "Samedi: 10h-12h"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1.6757,
+                    48.09292,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "Place de la communauté",
+                "description": "Samedi: 12h-14h"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1.704041,
+                    48.12126500000001,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "Villejean-Université",
+                "description": "Lundi: 16h-19h"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1.7138109,
+                    48.1146323,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "Atalante Champaux",
+                "description": "Mercredi: 16h-18h"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1.6951321,
+                    48.1003485,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "La Courrouze",
+                "description": "Lundi: 14h-16h<br>Mercredi: 19h-21h"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1.63575,
+                    48.120804,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "Campus INSA Rennes",
+                "description": "Mercredi: 14h-16h"
+            }
+        }
+    ]
+}

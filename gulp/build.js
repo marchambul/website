@@ -8,10 +8,11 @@ var $ = require('gulp-load-plugins')()
 ************************************************* Gulp tasks ************************************************
 *************************************************************************************************************/
 
+
 gulp.task('partials', ['inject'], function(done) {
   return gulp.src(paths.tmp + '/**/*.html')
     .pipe($.minifyHtml({empty: true, spare: true, quotes: true}))
-    .pipe($.angularTemplatecache('templateCacheHtml.js', {root: '', module: 'cashregister'}))
+    .pipe($.angularTemplatecache('templateCacheHtml.js', {root: '', module: 'marchambul'}))
     .pipe(gulp.dest(paths.tmp + '/partials/'));
 });
 

@@ -1,13 +1,14 @@
-var gulp = require('gulp')
-var paths = gulp.paths
+var gulp = require('gulp');
+var paths = gulp.paths;
  var del = require('del');
-var $ = require('gulp-load-plugins')()
+var $ = require('gulp-load-plugins')();
+var bs = require('browser-sync').create('server');
 
 /************************************************************************************************************
 ************************************************* Gulp tasks ************************************************
 *************************************************************************************************************/
 gulp.task('serve', ['watch'], function(done) {
-  return require('browser-sync').init({
+    return bs.init({
        server: {
            baseDir: ".tmp/",
            routes: {"/bower_components": "bower_components"}

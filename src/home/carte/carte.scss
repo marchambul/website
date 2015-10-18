@@ -3,6 +3,9 @@
   #map{
     height: 750px;
     border: 1px solid #ccc;
+    h4{
+        font-weight: bold;
+    }
   }
   #list-tournees{
 
@@ -53,11 +56,17 @@ producteur{
   height: 30px;
 }
 
+.leaflet-container img {
+    left: -30px !important;
+}
+
+
 .custom-popup .leaflet-popup-content-wrapper {
   border-radius: 3px;
   font-size:14px;
   line-height:20px;
-  width: 400px;
+  width: 130px;
+  text-align: center;
 
   img {
     width: 100%;

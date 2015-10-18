@@ -1,4 +1,4 @@
-@import '../../config';
+@import '../config';
 
 
 .pre-header {
@@ -12,7 +12,7 @@
 	padding-bottom: 50px;
 	text-align: center;
 	color: $light_white_intro_color;
-	background: url(img/bg-logo.jpg) no-repeat center center;
+	background: url(/img/main.png) no-repeat center center;
 	background-size: cover;
 
 	.intro-container {
