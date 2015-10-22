@@ -1,13 +1,11 @@
-.container
-  //- tabset(justified="true" vertical="true" type="pills")
-  //-   tab(heading="Tournées à venir") Justified content
-  //-   tab(heading="Tournées passées") 
-  //-     table.table
-  //-      tr
-  //-       td(ng-repeat="round in rounds")
-  //-         span {{round.name}} - {{round.totalPrice}} €
-  //
-  
-  button.btn.btn-link(type="button" ui-sref="newRound") 
-    i.fa.fa-plus.fa-fw
-    span Nouvelle tournée
+#account-view
+  #wrapper
+    #sidebar-wrapper
+      ul.sidebar-nav
+        li(ui-sref-active="active")
+          a(ui-sref="account.rounds") Tournées
+        li(ui-sref-active="active")
+          a(ui-sref="account.sales") Ventes
+    #page-content-wrapper
+      .container-fluid
+        .row(ui-view="")

@@ -39,8 +39,8 @@ angular.module("marchambul", [
 .run(function($rootScope, $localStorage, $state){
   $rootScope.$on('$stateChangeStart', function (event, toState, toParams) {
     if (toState.type === 'account' && typeof $localStorage.token === 'undefined') {
-      event.preventDefault();
-      $state.go('login');
+      // event.preventDefault();
+      // $state.go('login');
       }
   });
 });

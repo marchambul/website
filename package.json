@@ -36,6 +36,7 @@
     "gulp-rev": "^5.1.0",
     "gulp-rev-replace": "^0.4.2",
     "gulp-run-sequence": "^0.3.2",
+    "gulp-sass": "^2.0.4",
     "gulp-uglify": "^1.2.0",
     "gulp-useref": "^1.2.0",
     "gulp-util": "^2.2.14",
@@ -45,6 +46,7 @@
     "markdown": "^0.5.0",
     "marked": "^0.3.5",
     "marky-markdown": "^5.3.0",
+    "node-sass": "^3.3.3",
     "shelljs": "^0.3.0",
     "wiredep": "^3.0.0-beta"
   },
