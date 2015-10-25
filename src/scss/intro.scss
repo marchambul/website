@@ -12,8 +12,9 @@
 	padding-bottom: 50px;
 	text-align: center;
 	color: $light_white_intro_color;
-	background: url(/img/main.png) no-repeat center center;
+	background-image: url(/img/main.png);
 	background-size: cover;
+	height: calc(100vh - 50px);
 
 	.intro-container {
 		position: relative;
