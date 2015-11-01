@@ -9,6 +9,7 @@ var bs = require('browser-sync').create('server');
 *************************************************************************************************************/
 gulp.task('serve', ['watch'], function(done) {
     return bs.init({
+        notify: false,
        server: {
            baseDir: ".tmp/",
            routes: {"/bower_components": "bower_components"}

@@ -1,61 +1,55 @@
 @import '../config';
 
+$intro-color: $black_80;
 
-.pre-header {
-	padding-top: 50px;
-	height: 50px;
-	background: url(img/pre-header.jpg);
-}
-
-.intro-header {
+#intro-container {
 	padding-top: 50px;
 	padding-bottom: 50px;
 	text-align: center;
-	color: $light_white_intro_color;
+	color: $intro-color;
 	background-image: url(/img/main.png);
 	background-size: cover;
 	height: calc(100vh - 50px);
 
-	.intro-container {
-		position: relative;
-		margin-top: -30px;
-		padding-bottom: 350px;
+	#intro-message {
+		margin-left: 50%;
+		margin-top: 200px;
 		> {
-			// main title : Comment democratiser...
-			h1 {
+			// main title : Pas de marché près de chez vous ?...
+			h2 {
 				margin: 0;
-				text-shadow: 0 0 8px $black_80;
-				font-size: 2.5rem;
-				font-weight: normal;
-				margin-bottom: 50px;
+				font-size: 28px;
+				font-weight: 300;
+				margin-bottom: 30px;
+				text-transform: none;
 			}
-			// stat : 71% preferebnt....
-			h3.stat {
-				text-shadow: 0 0 8px $black_80;
-				font-size: 2.5rem;
-				padding-bottom: 0;
-				letter-spacing: -0.5px;
-				// red color for stats
-				span.highlight{
-				  color: red;
-				  font-weight: 600;
+			#intro-button{
+				font-size: 26px;
+				text-transform: uppercase;
+				background-color: transparent;
+				border: 1px solid $intro-color;
+			    color: $intro-color;
+				font-weight: 300;
+			    padding: 12px;
+				display: inline-block;
+
+				span.angle-icon{
+					transition: all 0.5s;
+					opacity: 0;
+					margin-top:-40px;
+					text-align: center;
+					display: block;
+				}
+				&:hover{
+					background-color: rgba(255,255,255,0.2);
+					font-weight: 400;
+					span.angle-icon{
+						opacity: 1;
+						margin-top:-10px;
+						margin-bottom:-10px;
+					}
 				}
 			}
-			// slogan : Le marche ambulant qui se faufile....
-			h3.slogan {
-				padding-bottom: 25px;
-				margin-top: -10px;
-				text-transform: uppercase;
-				font-size: 2rem;
-				text-shadow: 1px 1px 0 $black_20;
-				color: $black;
-			}
-		}
-		.intro-divider {
-			width: 400px;
-			border-top: 1px solid $black_60;
-			border-bottom: 1px solid $black_20;
-			margin-top: 6px;
 		}
 	}
 }
