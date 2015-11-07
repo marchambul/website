@@ -29,6 +29,6 @@ gulp.task('assets', function() {
 });
 
 gulp.task('images', function() {
-  return gulp.src("src/assets/img/**/*.png")
+  return gulp.src("src/assets/img/**/*.*")
   .pipe(gulp.dest(paths.tmp + '/img/'));
 });

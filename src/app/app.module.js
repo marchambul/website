@@ -41,6 +41,12 @@ angular.module("marchambul", [
 
     $timeout(function(){$('.slogan').addClass('loaded');}, 1000);
 
+    $rootScope.goToMapView = function(){
+        $('body').animate({
+            scrollTop: $("#map-view").offset().top - 100
+        } , 600);
+    };
+
   $rootScope.$on('$stateChangeStart', function (event, toState, toParams) {
     if (toState.type === 'account' && typeof $localStorage.token === 'undefined') {
       // event.preventDefault();
