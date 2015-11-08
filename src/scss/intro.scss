@@ -9,7 +9,10 @@ $intro-color: $black_80;
 	color: $intro-color;
 	background-image: url(/img/main.png);
 	background-size: cover;
-	height: calc(100vh - 50px);
+	height: calc(100vh);
+	@media (max-width:1200px){
+		background-image: url(/img/main_small.png);
+	}
 
 	#intro-message {
 		margin-left: 50%;
