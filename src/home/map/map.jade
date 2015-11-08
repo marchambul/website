@@ -1,53 +1,59 @@
 #map-view.container(ng-controller="MapCtrl")
-  .row
-    .col-md-5
-      h3.section-title.center 
-        i.fa.fa-bullhorn
-          span.margin-left Ca se passe ici
-      #map
-    .col-md-7
-      #round-list
-        h3.section-title.center 
-          i.fa.fa-calendar
-            span.margin-left Les prochaines tournées
+    .row
+        .col-md-5
+            h3.section-title.center 
+                i.fa.fa-bullhorn
+                span.margin-left Ca se passe ici
+            #map
+        .col-md-7
+            #round-list
+                h3.section-title.center 
+                    i.fa.fa-calendar
+                    span.margin-left Les prochaines tournées
         
-        ul.list-rounds
-            li.round-item
-                .info-line
-                    i.fa.fa-fw.fa-map-marker 
-                    span.icon-label place de la République, Rennes
-                .info-line
-                    i.fa.fa-fw.fa-clock-o
-                    span.icon-label 03 mars 2016 : 15h - 18h
-                p Venez gouter aux bons légumes du Clos Renaud. Cette semaine : patates, carottes, haricots verts et frites!
-                .profil
-                    img.profile-img.img-circle(src="img/temp/yann.jpg")
-                    span Yann le vendeur de rêve
-                
-            li.round-item
-                .info-line
-                    i.fa.fa-fw.fa-map-marker 
-                    span.icon-label place de la Libération, Île-Saint-Denis
-                .info-line
-                    i.fa.fa-fw.fa-clock-o
-                    span.icon-label 5 mars 2015 : 12h - 15h
-                p  on vous propose des tomates,  salades et navets du jardin d'hippolyte
-                .profil
-                    img.profile-img.img-circle(src="img/temp/cyril.jpg")
-                    span Cyril l'artisan en herbes
-                    
-                    
-            li.round-item
-                .info-line
-                    i.fa.fa-fw.fa-map-marker 
-                    span.icon-label parvis de la Gare, Rennes
-                .info-line
-                    i.fa.fa-fw.fa-clock-o
-                    span.icon-label 6 mars 2015 : 10h - 18h
-                p C'est pour qui les bons produits cueillis à la cueille d'Acigné: endives, patates, carottes!!
-                .profil
-                    img.profile-img.img-circle(src="img/temp/alesc.jpg")
-                    span Alexandre le cuisto vert
+                ul.list-rounds
+                    li.round-item
+                        p Venez gouter aux bons légumes du Clos Renaud. Cette semaine : patates, carottes, haricots verts et frites!
+                        .profil
+                            img.profile-img.img-circle(src="img/temp/yann.jpg")
+                            span Yann le vendeur de rêve
+                        .infos
+                            .info-line
+                                i.fa.fa-fw.fa-map-marker 
+                                span.icon-label place de la République, Rennes
+                            .info-line
+                                i.fa.fa-fw.fa-clock-o
+                                span.icon-label 03 mars 2016 : 15h - 18h
+                        
+                        
+                    li.round-item
+                        p  on vous propose des tomates,  salades et navets du jardin d'hippolyte
+                        .profil
+                            img.profile-img.img-circle(src="img/temp/cyril.jpg")
+                            span Cyril l'artisan en herbes
+                        .infos
+                            .info-line
+                                i.fa.fa-fw.fa-map-marker 
+                                span.icon-label place de la Libération, Île-Saint-Denis
+                            .info-line
+                                i.fa.fa-fw.fa-clock-o
+                                span.icon-label 5 mars 2015 : 12h - 15h
+                        
+                            
+                            
+                    li.round-item
+                        p C'est pour qui les bons produits cueillis à la cueille d'Acigné: endives, patates, carottes!!
+                        .profil
+                            img.profile-img.img-circle(src="img/temp/alesc.jpg")
+                            span Alexandre le cuisto vert
+                        .infos
+                            .info-line
+                                i.fa.fa-fw.fa-map-marker 
+                                span.icon-label parvis de la Gare, Rennes
+                            .info-line
+                                i.fa.fa-fw.fa-clock-o
+                                span.icon-label 6 mars 2015 : 10h - 18h
+                        
       
       
   

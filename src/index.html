@@ -8,6 +8,8 @@
       <meta name="description" content="">
       <meta name="author" content="">
       <meta name="google-site-verification" content="WIZLZFbX5d3NIBv1LwmgCb3ReG45SS44WjGBtMXJbfc" />
+      <script src='https://api.mapbox.com/mapbox.js/v2.2.3/mapbox.js'></script>
+      <link href='https://api.mapbox.com/mapbox.js/v2.2.3/mapbox.css' rel='stylesheet' />
 
       <title>Marchambul</title>
       <!-- build:css(.tmp) css/vendor.css -->
@@ -33,8 +35,8 @@
 
 
     <section id="main-section" ui-view>
-    <div ng-include="'/home/map/map.html'"></div>
-      <!-- @@include('home/map/map.html') -->
+    <!-- <div ng-include="'/home/map/map.html'"></div> -->
+      @@include('home/map/map.html')
     </section>
     <div ng-include="'includes/footer.html'"></div>
     <!-- @@include('includes/footer.html') -->

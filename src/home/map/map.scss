@@ -14,13 +14,9 @@
         li.round-item{
             background-color: #fff;
             box-shadow: 0 1px 0 0 rgba(0,0,0,.1);
-            padding: 10px;
+            padding: 10px 10px 0;
             margin-top: 10px;
-            .info-line{
-                margin: 10px 0px;
-            }
             p{
-                margin-top: 10px;
                 border-radius: 5px;
                 border: 1px solid #ddd;
                 padding: 10px;
@@ -29,8 +25,8 @@
                     content: "";
                     position: absolute;
                     bottom: -20px;
-                    right: 200px;
-                    border-width: 20px 0px 0px 20px;
+                    left: 130px;
+                    border-width: 20px 20px 0px 0px;
                     border-style: solid;
                     border-color: #ddd transparent;
                     display: block;
@@ -41,25 +37,36 @@
                   display: block; /* reduce the damage in FF3.0 */
                   position: absolute;
                   bottom: -18px;
-                  right: 201px;
+                  left: 131px;
                   width: 0;
-                  border-width: 18px 0px 0px 18px;
+                  border-width: 18px 18px 0px 0px;
                   border-style: solid;
                    background-color: transparent;
                   border-color: #ffffff transparent;
                 }
             }
             .profil{
-                width:  100%;
-                text-align: right;
-                padding-right: 20px;
-                margin-top: 15px;
+                width:  30%;
+                display: inline-block;
+                text-align: center;
                 img{
-                    height : 25px;
+                    height : 40px;
                 }
                 span{
                     color: grey;
-                    margin-left: 6px;
+                    margin-top: 3px;
+                    display: block;
+                    font-size: 12px;
+                }
+            }
+            .infos{
+                display: inline-block;
+                margin-left: 25%;
+                @media (max-width:1200px){
+                    margin-left: 50px;
+                }
+                .info-line{
+                    margin: 10px 0px;
                 }
             }
         }

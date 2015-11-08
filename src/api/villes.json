@@ -1,0 +1,39 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1.6723922,
+                    48.103850800000004,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "Rennes",
+                "description": "Un peu de Galette saucisse",
+                "title": "Virginia earthquake 2011 - mag. 5.8",
+                "marker-symbol": "monument"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.35,
+                    48.8060485,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "Paris",
+                "description": "Faut bien vendre de la verdure à ces parigots",
+                "title": "Virginia earthquake 2011 - mag. 5.8",
+                "marker-symbol": "monument"
+            }
+        }
+    ]
+}
