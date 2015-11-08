@@ -27,14 +27,12 @@
 }
 
 .navbar-button {
-    border: 1px solid $white;
-    color: $white !important;
-    line-height: 5px !important;
-    margin-top: 5px;
-    margin-left: 5px;
-    font-weight: 400;
-    &:hover, &.active {
-        background-color: $white !important;
-        color: $black !important;
+    line-height: $navbar-height;
+    margin: 0 3px;
+    font-size: 20px;
+    text-transform: uppercase;
+    color:  rgba(0,0,0,0.6);
+    &:hover{
+        color: black;
     }
 }

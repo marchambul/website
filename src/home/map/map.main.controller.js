@@ -9,6 +9,35 @@ class MapCtrl{
 
             var map = L.mapbox.map('map', 'mapbox.streets').setView([48.8, 2.35], 6);
 
+            $http.get("/api/villes.json").then(function(res) {
+
+              for (let ville of res.data.features) {
+
+                let popup = L.popup({
+                  closeButton: false,
+                  maxWidth: 150,
+                  minWidth: 150,
+                  className: 'custom-popup'
+                });
+
+                popup.setContent(
+                    '<h4>' + ville.properties.name + '</h4><p>' + ville.properties.description + '</p>' +
+                    '<a class="popup-button">Accéder au site</a>'
+                );
+                let coordinates = [ville.geometry.coordinates[1], ville.geometry.coordinates[0]];
+
+                L.marker(coordinates, {
+                    icon: L.icon({
+                        iconUrl: 'img/marchambul-icon.png'
+                    })
+                }).addTo(map).bindPopup(popup);
+
+            popup.setLatLng(coordinates);
+                map.addLayer(popup);
+              }
+            });
+
+
 
             // map.on('style.load', function () {
             //
