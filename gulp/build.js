@@ -57,13 +57,23 @@ gulp.task('html', ['partials'], function(done) {
 
 
 gulp.task('fonts', function(done){
-  gulp.src(mainBowerFiles())
+  return gulp.src(mainBowerFiles())
   .pipe($.filter('**/*.{eot,svg,ttf,woff}'))
   .pipe($.flatten())
   .pipe(gulp.dest(paths.dist + '/fonts/'));
 });
 
-gulp.task('rebuild', ['html', 'fonts'])
+gulp.task('images', function() {
+  return gulp.src("src/assets/img/**/*.*")
+  .pipe(gulp.dest(paths.dist + '/img/'));
+});
+
+gulp.task('assets', function() {
+  return gulp.src("src/**/*.json")
+  .pipe(gulp.dest(paths.dist));
+});
+
+gulp.task('rebuild', ['html', 'assets', 'fonts', 'images']);
 
 gulp.task('cleanDist',function(done) {
   return del([paths.dist + '/**/*'], done);

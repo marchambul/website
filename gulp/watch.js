@@ -9,7 +9,7 @@ var mainBowerFiles = require('main-bower-files');
 *************************************************************************************************************/
 
 
-gulp.task('watch', ['jade','inject', 'localfonts', 'assets', 'images'], function() {
+gulp.task('watch', ['jade','inject', 'localfonts', 'localassets', 'localimages'], function() {
   gulp.watch(paths.es6, ['babel-reload']);
   gulp.watch(paths.sass, ['sass-reload']);
   gulp.watch(paths.jade, ['jade-reload']);
@@ -23,12 +23,12 @@ gulp.task('localfonts', function() {
   .pipe(gulp.dest(paths.tmp  + '/fonts/'));
 });
 
-gulp.task('assets', function() {
+gulp.task('localassets', function() {
   return gulp.src("src/**/*.json")
   .pipe(gulp.dest(paths.tmp));
 });
 
-gulp.task('images', function() {
+gulp.task('localimages', function() {
   return gulp.src("src/assets/img/**/*.*")
   .pipe(gulp.dest(paths.tmp + '/img/'));
 });
