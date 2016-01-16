@@ -18,13 +18,40 @@
                         .profil
                             img.profile-img.img-circle(src="img/temp/yann.jpg")
                             span Yann le vendeur de rêve
-                        .infos
+                        .infos(ng-hide="toggled")
                             .info-line
                                 i.fa.fa-fw.fa-map-marker 
                                 span.icon-label place de la République, Rennes
                             .info-line
                                 i.fa.fa-fw.fa-clock-o
                                 span.icon-label 03 mars 2016 : 15h - 18h
+                        hr.small-margin(ng-hide="toggled")
+                        a.card-bottom-link(ng-click="toggled=!toggled", ng-hide="toggled")
+                            i.fa.fa-eye
+                            span.icon-label voir toutes les tournées de Yann
+                        table.table.rounds-table(ng-if="toggled")
+                            thead
+                                tr
+                                    td 
+                                        i.fa.fa-fw.fa-map-marker
+                                        span.icon-label Où
+                                    td 
+                                        i.fa.fa-fw.fa-clock-o
+                                        span.icon-label Quand
+                            tbody
+                                tr
+                                    td place de la République, Renne
+                                    td 03 mars 2016 : 15h - 18h
+                                tr
+                                    td place de la République, Renne
+                                    td 03 mars 2016 : 15h - 18h
+                                tr
+                                    td place de la République, Renne
+                                    td 03 mars 2016 : 15h - 18h
+                                tr
+                                    td place de la République, Renne
+                                    td 03 mars 2016 : 15h - 18h
+                                        
                         
                         
                     li.round-item
