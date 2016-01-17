@@ -15,16 +15,17 @@ $white: white;
 
 //navbar
 $navbar-padding-vertical: 0; $navbar-padding-horizontal:0;
-$navbar-height: 90px;
-$navbar-default-bg: rgba(255,255,255,0.6);
-//$navbar-default-bg: rgba(0,0,0,0.05);
+$navbar-height: 60px;
+$navbar-border-radius: 0px;
+$navbar-default-border: none;
+$navbar-default-bg: #fff;
 $navbar-default-color : $black;
-$navbar-default-border: $black;
 
 
 //Media queries variables
-$tablet-width: 768px;
-$desktop-width: 1024px;
+$tablet-width: 800px;
+$desktop-width: 1200px;
+$iphone5-width: 360px;
 
 
 @import 'scss/mixins.scss';

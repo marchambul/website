@@ -15,3 +15,9 @@
     @content;
   }
 }
+
+@mixin iphone5 {
+  @media (max-width: #{$iphone5-width - 1px}) {
+    @content;
+  }
+}

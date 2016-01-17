@@ -1,18 +1,43 @@
 @import '../config';
 
+.navbar{
+    border-bottom: 1px solid #ccc;
+    ;
+    @include desktop{margin-bottom: 0px;}
+	@include tablet{margin-bottom: -10px;}
+	@include mobile{
+        display:none;margin-bottom: -10px;
+    }
+}
+
+.navbar-default .navbar-toggle{
+    border: none;
+    background-color: transparent !important;
+    &:hover{
+
+        span.icon-bar{
+            background-color: black;
+        }
+
+    }
+}
+
 .navbar-brand {
     color: $white !important;
     font-weight: 400;
     img{
         display: inline-block;
-        height: 80px;
+        height: 100%;
+        margin-top: -5px;
+        margin-left: -40px;
     }
     h1.slogan{
         display: inline-block;
-        vertical-align: -60%;
         text-transform: uppercase;
-        font-size: 20px;
+        font-size: 16px;
+        margin: 10px;
         color:  rgba(0,0,0,0.6);
+        vertical-align: sub;
         //transition
         margin-left:300px;
         opacity: 0;

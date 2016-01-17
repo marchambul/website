@@ -1,4 +1,4 @@
-nav.navbar.navbar-default.navbar-fixed-top(role='navigation')
+nav.navbar.navbar-default(role='navigation')
   .container-fluid
     .navbar-header
       button.navbar-toggle(type='button', data-toggle='collapse', data-target='#bs-example-navbar-collapse-1')
@@ -9,9 +9,10 @@ nav.navbar.navbar-default.navbar-fixed-top(role='navigation')
         span.icon-bar
       a.navbar-brand(href='#')
         img(src='img/marchambul.png')
-        h1.slogan le réseau de marchés ambulants sur triporteur
-    .navbar
-        a.nav.navbar-nav.navbar-right.navbar-button(href='mailto:contact@marchambul.com?Subject=Bonjour%20Marchambul') contact
+        h1.slogan.hide-for-small-device le réseau de marchés ambulants sur triporteur
+    .collapse.navbar-collapse#bs-example-navbar-collapse-1
+        .nav.navbar-nav.navbar-right
+            a.navbar-button(href='mailto:contact@marchambul.com?Subject=Bonjour%20Marchambul') contact
         
         
     //- #bs-example-navbar-collapse-1.collapse.navbar-collapse

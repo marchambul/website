@@ -7,51 +7,72 @@ $intro-color: $black_80;
 	padding-bottom: 50px;
 	text-align: center;
 	color: $intro-color;
-	background-image: url(../img/main.png);
 	background-size: cover;
 	height: calc(100vh);
-	@media (max-width:1200px){
-		background-image: url(../img/main_small.png);
+	@include desktop{
+		background-image: url(../img/main_desktop.png);
+	}
+	@include tablet{
+		background-image: url(../img/main_tablet.png);
+	}
+	@include mobile{
+		background-image: url(../img/main_phone.png);
+	}
+}
+
+
+
+#intro-message {
+	@include desktop{margin-top: 20px;margin-left: 45%;max-width: 50%;}
+	@include tablet{margin-top: 10px;margin-left: 50%;max-width: 50%;}
+	@include mobile{
+		margin-top: 10px;text-align: center;
+        @include iphone5{
+            margin-top: -20px;
+        }
 	}
 
-	#intro-message {
-		margin-left: 40%;
-		margin-top: 160px;
 
-		> {
-			// main title : Pas de marché près de chez vous ?...
-			h2 {
-				margin: 0;
-				font-size: 28px;
-				font-weight: 300;
-				margin-bottom: 30px;
-				text-transform: none;
+	> {
+		// main title : Pas de marché près de chez vous ?...
+		h2 {
+			margin: 0;
+			@include desktop{font-size: 28px;}
+			@include tablet{font-size: 24px;}
+			@include mobile{font-size: 24px;}
+			@include iphone5{font-size: 18px !important;}
+			font-weight: 300;
+			margin-bottom: 30px;
+			text-transform: none;
+		}
+		#intro-button{
+			@include desktop{font-size: 26px;}
+			@include tablet{font-size: 24px;}
+			@include mobile{font-size: 24px;}
+			@include iphone5{font-size: 18px !important;}
+			text-transform: uppercase;
+			background-color: transparent;
+			border: 1px solid $intro-color;
+			color: $intro-color;
+			font-weight: 300;
+			padding: 12px;
+			display: inline-block;
+
+			span.angle-icon{
+				transition: all 0.5s;
+				opacity: 0;
+				margin-top:-40px;
+				@include iphone5{margin-top:-30px;}
+				text-align: center;
+				display: block;
 			}
-			#intro-button{
-				font-size: 26px;
-				text-transform: uppercase;
-				background-color: transparent;
-				border: 1px solid $intro-color;
-			    color: $intro-color;
-				font-weight: 300;
-			    padding: 12px;
-				display: inline-block;
-
+			&:hover{
+				background-color: rgba(255,255,255,0.2);
+				font-weight: 400;
 				span.angle-icon{
-					transition: all 0.5s;
-					opacity: 0;
-					margin-top:-40px;
-					text-align: center;
-					display: block;
-				}
-				&:hover{
-					background-color: rgba(255,255,255,0.2);
-					font-weight: 400;
-					span.angle-icon{
-						opacity: 1;
-						margin-top:-10px;
-						margin-bottom:-10px;
-					}
+					opacity: 1;
+					margin-top:-10px;
+					margin-bottom:-10px;
 				}
 			}
 		}
@@ -66,10 +87,10 @@ $intro-color: $black_80;
 ******************************/
 @include mobile {
 	.intro-header {
-	  .intro-container > {
+		.intro-container > {
 			h3.stat, h1 {
-	    font-size: 2.2rem ;
-	    padding-bottom: 20px;
+				font-size: 2.2rem ;
+				padding-bottom: 20px;
 			}
 			h3.slogan{
 				font-size: 1.6rem ;
@@ -79,5 +100,5 @@ $intro-color: $black_80;
 				max-width: 500px;
 			}
 		}
-  }
+	}
 }

@@ -1,15 +1,13 @@
 class MapCtrl{
+
     constructor($scope, $http){
-        var map, marchambulIcon;
-
-
-        this._init = function(){
+        var marchambulIcon;
 
             L.mapbox.accessToken = 'pk.eyJ1IjoibWFyY2hhbWJ1bCIsImEiOiI5NzI1MTA5ODk4MjFlM2EwZWIwM2Y4N2JiMjI5NTE4ZiJ9.2SFijYH9C8e_tZ2WyWboEQ';
 
-            var map = L.mapbox.map('map', 'mapbox.streets').setView([48.8, 2.35], 6);
+            this.map = L.mapbox.map('map', 'mapbox.streets').setView([48.8, 2.35], 6);
 
-            $http.get("/api/villes.json").then(function(res) {
+            $http.get("/api/villes.json").then((res) =>{
 
               for (let ville of res.data.features) {
 
@@ -30,10 +28,10 @@ class MapCtrl{
                     icon: L.icon({
                         iconUrl: 'img/marchambul-icon.png'
                     })
-                }).addTo(map).bindPopup(popup);
+                }).addTo(this.map).bindPopup(popup);
 
             popup.setLatLng(coordinates);
-                map.addLayer(popup);
+                this.map.addLayer(popup);
               }
             });
 
@@ -72,9 +70,12 @@ class MapCtrl{
             //         }
             //     });
             // });
-        };
-        this._init();
     }
+
+    fly () {
+        this.map.setView(L.latLng(48.103850800000004,-1.6723922), 15, {animate: true});
+    }
+
 }
 
 angular.module("marchambul").controller("MapCtrl", MapCtrl);
