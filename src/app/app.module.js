@@ -15,42 +15,13 @@ angular.module("marchambul", [
   'ngStorage'
 ])
 
-.config(function($httpProvider){
-  $httpProvider.interceptors.push(function ($q, $location, $localStorage) {
-   return {
-       'request': function (config) {
-           config.headers = config.headers || {};
-           if ($localStorage.token) {
-               config.headers.Authorization = 'Bearer ' + $localStorage.token;
-           }
-           return config;
-       },
-       'responseError': function (response) {
-           if (response.status === 401 || response.status === 403) {
-               $location.path('/login');
-           }
-           return $q.reject(response);
-           }
-       };
-    });
-
-})
-
 .run(function($rootScope, $localStorage, $state, $timeout){
-
 
     $timeout(function(){$('.slogan').addClass('loaded');}, 1000);
 
-    $rootScope.goToMapView = function(){
+    $rootScope.scrollTo = function(selector){
         $('body').animate({
-            scrollTop: $("#map-view").offset().top - 100
+            scrollTop: $(selector).offset().top
         } , 600);
     };
-
-  $rootScope.$on('$stateChangeStart', function (event, toState, toParams) {
-    if (toState.type === 'account' && typeof $localStorage.token === 'undefined') {
-      // event.preventDefault();
-      // $state.go('login');
-      }
-  });
 });

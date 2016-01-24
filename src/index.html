@@ -28,18 +28,22 @@
   </head>
 
 	<body>
-        <div ng-include="'/includes/navbar.html'"></div>
-		<!-- @@include('includes/navbar.html') -->
-        <div ng-include="'/includes/intro.html'"></div>
-        <!-- @@include('includes/intro.html') -->
+        <!-- <div ng-include="'/includes/navbar.html'"></div> -->
+		@@include('includes/navbar.html')
+        <!-- <div ng-include="'/includes/intro.html'"></div> -->
+        @@include('includes/intro.html')
 
 
-    <section id="main-section" ui-view>
-    <div ng-include="'/home/map/map.html'"></div>
-      <!-- @@include('home/map/map.html') -->
+    
+    <!-- <div ng-include="'/concept/concept.html'"></div> -->
+    @@include('concept/concept.html')
+    <!-- <div ng-include="'/map/map.html'"></div> -->
+    @@include('map/map.html')
+    <!-- <div ng-include="'/contact/contact.html'"></div> -->
+     @@include('contact/contact.html')
     </section>
-    <div ng-include="'includes/footer.html'"></div>
-    <!-- @@include('includes/footer.html') -->
+    <!-- <div ng-include="'includes/footer.html'"></div> -->
+    @@include('includes/footer.html')
 
     <!-- build:js(.tmp) js/vendor.js -->
     <!-- bower:js -->

@@ -1,10 +1,13 @@
-#map-view.container(ng-controller="MapCtrl as vm")
+section#rounds.container(ng-controller="MapCtrl as vm")
+    .intro
+        h2 Le réseau
+        h3 Marchambul se met en place lentement mais surement. Rendez-vous sur le site dedié à votre ville pour avoir plus de détail sur les lieux et les tournées.
     .row
         .col-md-5
             h3.section-title.center 
                 i.fa.fa-globe
                 span.margin-left Les villes partenaires 
-                a.partnership-link(href='mailto:contact@marchambul.com?Subject=Bonjour%20Marchambul') (devenir partenaire)
+                a.partnership-link(ng-click="scrollTo('#contact')" href='#contact')  (devenir partenaire)
             #map
         .col-md-7
             #round-list
