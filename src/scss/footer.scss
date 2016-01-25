@@ -2,9 +2,38 @@
 
 
 footer {
-    padding: 0px;
+    background-color: #ffffff;
+    padding: 30px;
     img{
-        width: 100%;
+
+        @include desktop{
+    		width: 200px;
+    	}
+    	@include tablet{
+    		width: 150px;
+    	}
+    	@include mobile{
+    		width: 100px;
+    	}
+    }
+    h4{
+        display: inline-block;
+    }
+
+    ul.list-partenaires{
+        display: inline-block;
+        margin-left: 20px;
+        img{
+            @include desktop{
+        		width: 120px;
+        	}
+        	@include tablet{
+        		width: 80px;
+        	}
+        	@include mobile{
+        		width: 50px;
+        	}
+        }
     }
 
 
