@@ -1,5 +1,7 @@
 {
     "type": "FeatureCollection",
+    "centerView": [48.8, 2.35],
+    "zoom": 6,
     "features": [
         {
             "type": "Feature",
@@ -14,8 +16,7 @@
             "properties": {
                 "name": "Rennes",
                 "description": "Bzh en force dès avril 2016",
-                "title": "Virginia earthquake 2011 - mag. 5.8",
-                "marker-symbol": "monument"
+                "link": "#/rennes"
             }
         },
         {
@@ -31,8 +32,7 @@
             "properties": {
                 "name": "Paris",
                 "description": "premières tournées en capitale pour mai 2016",
-                "title": "Virginia earthquake 2011 - mag. 5.8",
-                "marker-symbol": "monument"
+                "link": "#/plaine-commune"
             }
         }
     ]

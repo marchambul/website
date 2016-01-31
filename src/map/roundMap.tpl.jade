@@ -1,0 +1,43 @@
+.row
+    .col-md-5
+        h3.section-title.center() 
+            i.fa.fa-globe
+            span.margin-left {{vm.city == 'all' ? 'Les villes partenaires' : 'Les lieux'}} 
+            a.partnership-link(ng-click="scrollTo('#contact')" href='#contact' ng-if="vm.city == 'all'")  (devenir partenaire)
+        #map
+    .col-md-7
+        #round-list
+            h3.section-title.center
+                i.fa.fa-calendar
+                span.margin-left Les prochaines tournées
+    
+            ul.list-rounds
+                li.round-item(ng-repeat="people in vm.sellers")
+                    p(ng-bind-html="people.message")
+                    .profil
+                        img.profile-img.img-circle(ng-src="{{people.image}}")
+                        span {{people.name}}
+                    .infos(ng-hide="vm.toogled", ng-click="vm.fly(people.rounds[0])")
+                        .info-line
+                            i.fa.fa-fw.fa-map-marker 
+                            span.icon-label {{people.rounds[0].properties.place}}
+                        .info-line
+                            i.fa.fa-fw.fa-clock-o
+                            span.icon-label {{people.rounds[0].properties.time}}
+                    hr.small-margin(ng-hide="vm.toogled")
+                    a.card-bottom-link(ng-click="vm.toogled = true", ng-hide="vm.toogled")
+                        i.fa.fa-eye
+                        span.icon-label voir toutes les tournées de {{people.name}}
+                    table.table.rounds-table(ng-if="vm.toogled")
+                        thead
+                            tr
+                                td 
+                                    i.fa.fa-fw.fa-map-marker
+                                    span.icon-label Où
+                                td 
+                                    i.fa.fa-fw.fa-clock-o
+                                    span.icon-label Quand
+                        tbody
+                            tr(ng-repeat="round in people.rounds" ng-click="vm.fly(round)")
+                                td {{round.properties.place}}
+                                td {{round.properties.time}}
