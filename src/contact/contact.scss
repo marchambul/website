@@ -1,21 +1,23 @@
 @import '../config';
 
 $background: lighten(#f1c40f,40%);
+$background: #27ae60;
 
 $text-color: rgb(51, 51, 51);
+$text-color: #ffffff;
 $contact-text-color: $text-color;
 $contact-background: $background;
+$contact-box-color: #EB9532;
 //$contact-background: lighten(#6F532A, 40%);
 section#contact{
     padding-top: 20px;
-    padding-bottom: 10px;
     //background-color: #F5F3EE;
     background-color: $background;
     color: white;
 
 
         h2{
-            color: $text-color;
+            color: #000;
             text-transform: uppercase;
             text-align: center;
             font-weight: 300;
@@ -35,7 +37,7 @@ section#contact{
                 margin-bottom: -10px;
             }
             label{
-                background-color: $contact-background;
+                background-color: $contact-box-color;
                 padding: 0px 10px;
             }
 
@@ -64,34 +66,70 @@ section#contact{
 
     img.marchambul-logo{
         @include desktop{
-            height: 80px;
-            margin-top: -22px;
-            margin-left: -55px;
+            height: 50px;
+            margin-top: -8px;
+            margin-left: -200px;
+            margin-right: 30px;
     	}
     	@include tablet{
-            height: 60px;
-            margin-top: -12px;
-            margin-left: -35px;
+            height: 45px;
+            margin-top: -8px;
+            margin-left: -150px;
+            margin-right: 20px;
     	}
     	@include mobile{
             display: none;
     	}
 
     }
+
+    .link-between-sections{
+        text-align: center;
+        &:before{
+            content:"";
+            border-style: solid;
+            position: absolute;
+            margin-top: 20px;
+            border-width: 50px 50px 0 50px;
+            border-color:  #ffffff transparent transparent transparent;
+        }
+
+        &:after{
+            content:"";
+            border-style: solid;
+            position: absolute;
+            margin-top: 17px;
+            border-width: 50px 50px 0 50px;
+            border-color: $contact-background transparent transparent transparent;
+        }
+    }
+
+
+
     .contact-box{
+        padding-top: 60px;
         display: inline-block;
         width: 100%;
-        margin: 20px 0px;
-        background-color: $contact-background;
+        margin: 20px 0px 0px;
+        background-color: $contact-box-color;
         color: $contact-text-color;
-        border: 2px solid  $contact-text-color;
+        border-top: 2px solid  $contact-text-color;
+
+        a.navbar-button{
+            color: #ffffff;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
 
         img svg{
             color: white;
         }
 
         input, textarea{
-            border: 2px solid $contact-text-color;
+            border: 2px solid #ffffff;
+            background-color: $contact-box-color;
+            color: #ffffff;
         }
 
 
@@ -123,11 +161,15 @@ section#contact{
         display: flex;
         align-items: center;
         padding: 0px;
-        color: black;
-        font-weight: 600;
+        color: #000;
+        font-weight: 300;
 
-        img {
+        .contact-type-img {
             height: 90px;
+            svg {
+                stroke: $text-color;
+                fill: $text-color;
+                }
         }
 
         p {

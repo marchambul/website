@@ -11,7 +11,7 @@ class MapCtrl{
 
         $http.get(`/api/rounds/${this.city}.json`).then((res) => {
             this.sellers = res.data.sellers;
-            this.toogled = res.data.toogled;
+            this.toggled = res.data.toggled;
         });
 
         $http.get(`/api/map/${this.city}.json`).then((res) =>{
@@ -32,7 +32,7 @@ class MapCtrl{
                 let content = '<h4>' + ville.properties.name + '</h4><p>' + ville.properties.description + '</p>';
 
                 if (ville.properties.link){
-                    content += `<a class="popup-button" href="${ville.properties.link}">Accéder au site</a>`;
+                    content += `<a class="popup-button" href="${ville.properties.link}" target="_blank">Accéder au site</a>`;
                 }
 
                 popup.setContent(content);
@@ -40,7 +40,8 @@ class MapCtrl{
 
                 L.marker(coordinates, {
                     icon: L.icon({
-                        iconUrl: 'img/marchambul-icon.png'
+                        iconUrl: 'img/icon.svg',
+                        iconSize: [65,27]
                     })
                 }).addTo(this.map).bindPopup(popup);
 
@@ -50,42 +51,6 @@ class MapCtrl{
                 //}
             }
         });
-
-
-
-        // map.on('style.load', function () {
-        //
-        //     $http.get("/api/villes.json").then(function(res) {
-        //         map.addSource("markers", {
-        //             "type": "geojson",
-        //             "data": res.data
-        //         });
-        //
-        //
-        //
-        //         map.addLayer({
-        //             "id": "markers",
-        //             "type": "symbol",
-        //             "source": "markers",
-        //             "layout": {
-        //                 "icon-image": "{marker-symbol}-15",
-        //                 "text-font": ["Open Sans Semibold", "Arial Unicode MS Bold"],
-        //                 "text-offset": [0, 0.6],
-        //                 "text-anchor": "top"
-        //             },
-        //             "paint": {
-        //                 "text-size": 12
-        //             }
-        //         });
-        //
-        //         for (let tournee of res.data.features) {
-        //             var tooltip = new mapboxgl.Popup()
-        //             .setLngLat(tournee.geometry.coordinates)
-        //             .setHTML('<h4>' + tournee.properties.name + '</h4><p>' + tournee.properties.description + '</p>')
-        //             .addTo(map);
-        //         }
-        //     });
-        // });
     }
 
     fly (round) {

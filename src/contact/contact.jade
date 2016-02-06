@@ -1,60 +1,63 @@
 section#contact
     .container
         h2 
-               img.marchambul-logo(src='img/marchambul.png') 
+               img.marchambul-logo(src='img/icon.svg') 
                | Envie que Marchambul passe chez vous?
         
         .contact-type
             .contact-type--icon
-                img(src='img/prospects/city.svg')
+                object.contact-type-img(type="image/svg+xml" data="img/prospects/city.svg")
             .contact-type--label
                 p Vous êtes une municipalité ou un aménageur souhaitant mettre à disposition un marché ambulant pour ses habitants
                 
         .contact-type
             .contact-type--icon
-                img(src='img/prospects/business.svg')
+                object.contact-type-img(type="image/svg+xml" data="img/prospects/business.svg")
             .contact-type--label
                 p Ou une entreprise désirant offrir le meilleur service pour ses employés
                 
         .contact-type
             .contact-type--icon
-                img(src='img/prospects/public.svg')
+                object.contact-type-img(type="image/svg+xml" data="img/prospects/public.svg")
             .contact-type--label
                 p  Une structure publique, université voulant ce qu'il y a de mieux pour ses étudiants et personnel
                 
         .contact-type
             .contact-type--icon
-                img(src='img/prospects/any.svg')
+                object.contact-type-img(type="image/svg+xml" data="img/prospects/any.svg")
             .contact-type--label
-                p N'importe qui qui se pose des questions
+                p Ou quiconque souhaitant un mini-marché ambulant
                 
-        .contact-box
-            h4.color-row-title Contactez nous afin que nous organisions une ou plusieurs tournées hebdomadaires chez vous
-            .contact-option-container
-                .contact-option
-                    .form-group
-                        label Mon email
-                        input.form-control
-                    .form-group
-                        label Mon message
-                        textarea.form-control(name="your-message" cols="40" rows="10")
-                    button.footer-btn Envoyer
-                .contact-option
-                    .hr-container.contact
-                        hr
-                        label Ou envoyez nous un email à 
-                    a.navbar-button(href='mailto:contact@marchambul.com?Subject=Bonjour%20Marchambul') contact@marchambul.com
-                    
-                    .hr-container.follow
-                        hr
-                        label Pour vous tenir au courant
-                            
-                    ul.list-inline.banner-social-buttons
-                      li
-                        a.footer-btn(href='https://www.facebook.com/marchambul' target="blank")
-                          i.fa.fa-facebook.fa-fw
-                          span.network-name Facebook
-                      li
-                        a.footer-btn(href='https://twitter.com/marchambul' target="blank")
-                          i.fa.fa-twitter.fa-fw
-                          span.network-name twitter
+    
+    .link-between-sections
+    
+    .contact-box.container
+        h4.color-row-title Contactez nous afin que nous organisions une ou plusieurs tournées hebdomadaires chez vous
+        .contact-option-container
+            .contact-option
+                .form-group
+                    label Mon email
+                    input.form-control
+                .form-group
+                    label Mon message
+                    textarea.form-control(name="your-message" cols="40" rows="10", value="Bonjour, je souhaite recevoir votre plaquette d'information")
+                button.footer-btn Envoyer
+            .contact-option
+                .hr-container.contact
+                    hr
+                    label Ou envoyez nous un email à 
+                a.navbar-button(href='mailto:contact@marchambul.com?Subject=Bonjour%20Marchambul') contact@marchambul.com
+                
+                .hr-container.follow
+                    hr
+                    label Pour vous tenir au courant
+                        
+                ul.list-inline.banner-social-buttons
+                  li
+                    a.footer-btn(href='https://www.facebook.com/marchambul' target="blank")
+                      i.fa.fa-facebook.fa-fw
+                      span.network-name Facebook
+                  li
+                    a.footer-btn(href='https://twitter.com/marchambul' target="blank")
+                      i.fa.fa-twitter.fa-fw
+                      span.network-name twitter

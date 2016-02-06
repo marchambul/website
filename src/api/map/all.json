@@ -15,8 +15,8 @@
             },
             "properties": {
                 "name": "Rennes",
-                "description": "Bzh en force dès avril 2016",
-                "link": "#/rennes"
+                "description": "On arrive en Bretagne",
+                "link": "/Rennes"
             }
         },
         {
@@ -30,9 +30,9 @@
                 ]
             },
             "properties": {
-                "name": "Paris",
-                "description": "premières tournées en capitale pour mai 2016",
-                "link": "#/plaine-commune"
+                "name": "Plaine-Commune",
+                "description": "Seine-Saint-Denis style",
+                "link": "/Plaine-commune"
             }
         }
     ]

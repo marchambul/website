@@ -7,7 +7,7 @@ gulp.paths = {
   es6: ['src/**/*.js'],
   sass: ['src/**/*.scss'],
   jade: ['src/**/*.jade'],
-  html: 'src/index.html',
+  html: ['src/**/*.html'],
   tmp: '.tmp',
   dist: 'www'
 };
