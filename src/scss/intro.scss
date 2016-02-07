@@ -8,7 +8,7 @@ $intro-color: $black_80;
 	text-align: center;
 	color: $intro-color;
 	background-size: cover;
-	height: calc(100vh);
+	height: calc(100vh - 50px);
 	@include desktop{
 		background-image: url(../img/main_desktop.png);
 	}

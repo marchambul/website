@@ -3,7 +3,7 @@
         h3.section-title.center() 
             i.fa.fa-globe
             span.margin-left {{vm.city == 'all' ? 'Les villes partenaires' : 'Les lieux'}} 
-            a.partnership-link(ng-click="scrollTo('#contact')" href='#contact' ng-if="vm.city == 'all'")  (devenir partenaire)
+            a.partnership-link(ng-click="vm.scrollTo('#contact')" href='#contact' ng-if="vm.city == 'all'")  (devenir partenaire)
         #map
     .col-md-7
         #round-list
@@ -17,18 +17,18 @@
                     .profil
                         img.profile-img.img-circle(ng-src="{{people.image}}")
                         span {{people.name}}
-                    .infos(ng-hide="vm.toogled", ng-click="vm.fly(people.rounds[0])")
+                    .infos(ng-hide="vm.toggled", ng-click="vm.fly(people.rounds[0])")
                         .info-line
                             i.fa.fa-fw.fa-map-marker 
                             span.icon-label {{people.rounds[0].properties.place}}
                         .info-line
                             i.fa.fa-fw.fa-clock-o
                             span.icon-label {{people.rounds[0].properties.time}}
-                    hr.small-margin(ng-if="people.rounds.length > 1" ng-hide="vm.toogled")
-                    a.card-bottom-link(ng-if="people.rounds.length > 1" ng-click="vm.toogled = true", ng-hide="vm.toogled")
+                    hr.small-margin(ng-if="people.rounds.length > 1" ng-hide="vm.toggled")
+                    a.card-bottom-link(ng-if="people.rounds.length > 1" ng-click="vm.toggled = true", ng-hide="vm.toggled")
                         i.fa.fa-eye
                         span.icon-label voir toutes les tournées de {{people.name}}
-                    table.table.rounds-table(ng-if="vm.toogled")
+                    table.table.rounds-table(ng-if="vm.toggled")
                         thead
                             tr
                                 td 

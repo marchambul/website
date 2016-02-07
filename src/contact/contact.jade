@@ -14,7 +14,7 @@ section#contact
             .contact-type--icon
                 object.contact-type-img(type="image/svg+xml" data="img/prospects/business.svg")
             .contact-type--label
-                p Ou une entreprise désirant offrir le meilleur service pour ses employés
+                p Ou une entreprise désirant offrir le meilleur cadre de travail pour ses employés
                 
         .contact-type
             .contact-type--icon
@@ -26,7 +26,7 @@ section#contact
             .contact-type--icon
                 object.contact-type-img(type="image/svg+xml" data="img/prospects/any.svg")
             .contact-type--label
-                p Ou quiconque souhaitant un mini-marché ambulant
+                p Ou quiconque souhaitant un marché ambulant pour sa structure
                 
     
     .link-between-sections
@@ -34,14 +34,20 @@ section#contact
     .contact-box.container
         h4.color-row-title Contactez nous afin que nous organisions une ou plusieurs tournées hebdomadaires chez vous
         .contact-option-container
-            .contact-option
-                .form-group
-                    label Mon email
-                    input.form-control
-                .form-group
-                    label Mon message
-                    textarea.form-control(name="your-message" cols="40" rows="10", value="Bonjour, je souhaite recevoir votre plaquette d'information")
-                button.footer-btn Envoyer
+
+            form.contact-option(action="//formspree.io/test@cymace.com" method="POST" ng-submit="checkEmail($event, email)")
+                .contact-option
+                    .form-group
+                        label Mon email
+                        input.form-control(name="email", ng-model="email")
+                        span.errorEmail(ng-if="errorEmail") Le format de l'email est incorrect
+                    .form-group
+                        label Mon message
+                        textarea.form-control(name="message" cols="40" rows="10", ng-model="message")
+                    button.footer-btn(
+                        type="submit"
+                        ng-click="sendMessage(email, message)"
+                        ) Envoyer
             .contact-option
                 .hr-container.contact
                     hr

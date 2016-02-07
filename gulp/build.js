@@ -27,8 +27,8 @@ gulp.task('html', ['partials'], function(done) {
     };
     var assets = $.useref.assets();
     var htmlFilter = $.filter(paths.tmp + '/*.html');
-    var jsFilter = $.filter(paths.tmp + '**/*.js');
-    var cssFilter = $.filter(paths.tmp + '**/*.css');
+    var jsFilter = $.filter(paths.tmp + '/**/*.js');
+    var cssFilter = $.filter(paths.tmp + '/**/*.css');
 
     return gulp.src(paths.tmp + '/*.html')
     .pipe($.inject(partialsInjectFile, partialsInjectOptions))
@@ -37,11 +37,13 @@ gulp.task('html', ['partials'], function(done) {
     .pipe($.rev())
     // js specific processing
     .pipe(jsFilter)
+    .pipe($.debug({title: 'jsFilter:'}))
     .pipe($.ngAnnotate())
     .pipe($.uglify({preserveComments: $.uglifySaveLicense}))
     .pipe(jsFilter.restore())
     // css specific processing
     .pipe(cssFilter)
+    .pipe($.debug({title: 'cssFilter:'}))
     .pipe($.replace('../bootstrap-sass-official/assets/fonts/bootstrap', 'fonts'))
     .pipe($.csso())
     .pipe(cssFilter.restore())
@@ -51,6 +53,7 @@ gulp.task('html', ['partials'], function(done) {
     .pipe($.revReplace())
     // html specific processing
     .pipe(htmlFilter)
+    .pipe($.debug({title: 'htmlFilter:'}))
     .pipe($.minifyHtml())
     .pipe(htmlFilter.restore())
     // finish : we copy the final html file
@@ -71,11 +74,16 @@ gulp.task('images', function() {
 });
 
 gulp.task('assets', function() {
+    return gulp.src("src/assets/*.*")
+    .pipe(gulp.dest(paths.dist));
+});
+
+gulp.task('json', function() {
     return gulp.src("src/**/*.json")
     .pipe(gulp.dest(paths.dist));
 });
 
-gulp.task('rebuild', ['html', 'assets', 'fonts', 'images']);
+gulp.task('rebuild', ['html', 'assets', 'json','fonts', 'images']);
 
 gulp.task('cleanDist',function(done) {
     return del([paths.dist + '/**/*'], done);

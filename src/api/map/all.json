@@ -2,6 +2,7 @@
     "type": "FeatureCollection",
     "centerView": [48.8, 2.35],
     "zoom": 6,
+    "displayOnInit": "cities",
     "features": [
         {
             "type": "Feature",
@@ -16,7 +17,12 @@
             "properties": {
                 "name": "Rennes",
                 "description": "On arrive en Bretagne",
-                "link": "/Rennes"
+                "link": "/Rennes",
+                "cityMarker": "true",
+                "icon":{
+                    "iconUrl": "img/icon.svg",
+                    "iconSize": [65,27]
+                }
             }
         },
         {
@@ -24,15 +30,137 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    2.35,
-                    48.8060485,
+                    2.3385626,
+                    48.9381253,
                     0
                 ]
             },
             "properties": {
-                "name": "Plaine-Commune",
+                "name": "Plaine Commune",
                 "description": "Seine-Saint-Denis style",
-                "link": "/Plaine-commune"
+                "link": "/PlaineCommune",
+                "cityMarker": "true",
+                "icon":{
+                    "iconUrl": "img/icon.svg",
+                    "iconSize": [65,27]
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1.7055087,
+                    48.120682,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "Villejean Université",
+                "description": "lundi : 16h00 - 17h30",
+                "icon":{
+                    "iconUrl": "img/icon.svg",
+                    "iconSize": [65,27]
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1.7153319,
+                    48.114204,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "ZAC Atalante Champeaux",
+                "description": "lundi : 18h00 - 19h30",
+                "icon":{
+                    "iconUrl": "img/icon.svg",
+                    "iconSize": [65,27]
+                }
+            }
+        }
+        ,
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1.6757,
+                    48.09292,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "Place de la communautée",
+                "description": "samedi : 10h00 - 11h00",
+                "icon":{
+                    "iconUrl": "img/icon.svg",
+                    "iconSize": [65,27]
+                }
+            }
+        }
+        ,
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1.6653434,
+                    48.0939127,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "Place du souvenir",
+                "description": "samedi : 11h30 - 13h00",
+                "icon":{
+                    "iconUrl": "img/icon.svg",
+                    "iconSize": [65,27]
+                }
+            }
+        }
+        ,
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1.6749384,
+                    48.1042241,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "Place de la gare",
+                "description": "dimanche : 17h00 - 20h00",
+                "icon":{
+                    "iconUrl": "img/icon.svg",
+                    "iconSize": [65,27]
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.3385626,
+                    48.9381253,
+                    0
+                ]
+            },
+            "properties": {
+                "name": "Plaine Commune",
+                "description": "infos à venir",
+                "icon":{
+                    "iconUrl": "img/icon.svg",
+                    "iconSize": [65,27]
+                }
             }
         }
     ]

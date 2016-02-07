@@ -6,7 +6,7 @@
     "sellers": [
         {"name": "Cyril",
         "image": "img/temp/cyril.jpg",
-        "message": "A partir de fin Mars je vous propose des légumes bio et de de saison <a target=\"_blank\" href=\"http://lesvilainsbruz.blogspot.fr/p/le-clos-renaud-venez-rencontrer-vos.html\">du Clos Renaud</a>",
+        "message": "Avis aux rennais, à partir de fin Mars je vous propose des légumes bio et de de saison <a target=\"_blank\" href=\"http://lesvilainsbruz.blogspot.fr/p/le-clos-renaud-venez-rencontrer-vos.html\">du Clos Renaud</a>",
         "rounds" : [
             {
                 "type": "Feature",
@@ -89,15 +89,15 @@
         ]},
         {"name": "Alexandre",
         "image": "img/temp/alesc.jpg",
-        "message": "Je recherche un vendeur pour m'aider à lancer Marchambul à Plaine Commune à partir d'Avril <a target=\"_blank\" href=\"http://lesvilainsbruz.blogspot.fr/p/le-clos-renaud-venez-rencontrer-vos.html\">plus d'infos sur ce lien</a>",
+        "message": "Je recherche un vendeur pour m'aider à lancer Marchambul à Plaine Commune à partir d'Avril <a target=\"_blank\" href=\"/Plaquette_Marchand.pdf\">plus d'infos sur ce lien</a>",
         "rounds" : [
             {
                 "type": "Feature",
                 "geometry": {
                     "type": "Point",
                     "coordinates": [
-                        -1.7055087,
-                        48.120682,
+                        2.3385626,
+                        48.9381253,
                         0
                     ]
                 },
