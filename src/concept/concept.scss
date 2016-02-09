@@ -1,3 +1,5 @@
+@import '../config';
+
 #concept{
     background-color: #fff;
 
@@ -6,8 +8,19 @@
     }
 
     img#down-arrow{
-        height: 100px;
+        @include desktop{
+            height: 95px;
+            margin: 20px 0 25px;
+    	}
+    	@include tablet{
+            height: 70px;
+            margin: 15px 0 20px;
+    	}
+    	@include mobile{
+            height: 40px;
+            margin: 10px 0 15px;
+    	}
+
+
     }
-
-
 }

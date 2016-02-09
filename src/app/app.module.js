@@ -19,7 +19,7 @@ angular.module("marchambul", ['ui.router', 'ngSanitize'])
     $rootScope.message = "Bonjour, je souhaite recevoir votre plaquette d'information";
 
     $rootScope.checkEmail = function(event, email){
-        if (email && email.match(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}$/)){
+        if (email && email.match(/\S+@\S+\.\S+/)){
             delete $rootScope.errorEmail;
         }
         else{

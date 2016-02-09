@@ -26,9 +26,24 @@ gulp.task('html', ['partials'], function(done) {
         addRootSlash: false
     };
     var assets = $.useref.assets();
-    var htmlFilter = $.filter(paths.tmp + '/*.html');
-    var jsFilter = $.filter(paths.tmp + '/**/*.js');
-    var cssFilter = $.filter(paths.tmp + '/**/*.css');
+
+
+    function processJsFilter() {
+        return combine(
+            $.debug({title: 'jsFilter'}),
+            $.ngAnnotate(),
+            $.uglify({preserveComments: $.uglifySaveLicense})
+        );
+    }
+
+    function processCssFilter() {
+        return combine(
+            $.debug({title: 'cssFilter'}),
+            $.replace('../bootstrap-sass-official/assets/fonts/bootstrap', 'fonts'),
+            $.minifyCss()
+        );
+    }
+
 
     return gulp.src(paths.tmp + '/*.html')
     .pipe($.inject(partialsInjectFile, partialsInjectOptions))
@@ -36,26 +51,15 @@ gulp.task('html', ['partials'], function(done) {
     .pipe(assets)
     .pipe($.rev())
     // js specific processing
-    .pipe(jsFilter)
-    .pipe($.debug({title: 'jsFilter:'}))
-    .pipe($.ngAnnotate())
-    .pipe($.uglify({preserveComments: $.uglifySaveLicense}))
-    .pipe(jsFilter.restore())
+    .pipe(gulpif('**/*.js', processJsFilter()))
     // css specific processing
-    .pipe(cssFilter)
-    .pipe($.debug({title: 'cssFilter:'}))
-    .pipe($.replace('../bootstrap-sass-official/assets/fonts/bootstrap', 'fonts'))
-    .pipe($.csso())
-    .pipe(cssFilter.restore())
+    .pipe(gulpif('**/*.css', processCssFilter()))
     .pipe(assets.restore())
     // concatenate all files (2 scripts imported -> 1 script imported) ans change revision (gulp-rev-replace)
     .pipe($.useref())
     .pipe($.revReplace())
     // html specific processing
-    .pipe(htmlFilter)
-    .pipe($.debug({title: 'htmlFilter:'}))
-    .pipe($.minifyHtml())
-    .pipe(htmlFilter.restore())
+    .pipe(gulpif('**/*.html', $.minifyHtml()))
     // finish : we copy the final html file
     .pipe(gulp.dest(paths.dist + '/'));
 });
@@ -97,11 +101,11 @@ gulp.task('deploy', function() {
     console.log(process.env.AWS_KEY);
     var publisher = $.awspublish.create({
         params: {
-            Bucket: 'marchambulv2'
+            Bucket: 'www.marchambul.com'
         },
         accessKeyId: process.env.AWS_KEY,
         secretAccessKey: process.env.AWS_SECRET,
-        region: 'eu-central-1',
+        region: 'eu-west-1',
         apiVersion: 'latest'
     });
 
@@ -120,25 +124,27 @@ gulp.task('deploy', function() {
             $.debug({title: 'HTMLLL'}),
             $.rename({extname: ""}),
             $.awspublish.gzip(),
-            publisher.publish(htmlHeaders));
-        }
+            publisher.publish(htmlHeaders)
+        );
+    }
 
-        function processStandard() {
-            return combine(
-                $.debug({title: 'STANDARD:'}),
-                $.awspublish.gzip(),
-                publisher.publish(headers));
-            }
+    function processStandard() {
+        return combine(
+            $.debug({title: 'STANDARD:'}),
+            $.awspublish.gzip(),
+            publisher.publish(headers)
+        );
+    }
 
 
-            return gulp.src('www/**')
-            .pipe($.debug({title: 'aaaaas:'}))
-            // gzip, Set Content-Encoding headers and add .gz extension
-            .pipe(gulpif(/^(?!(.*index)).+\.html/, processHtml(), processStandard()))
+    return gulp.src('www/**')
+    .pipe($.debug({title: 'aaaaas:'}))
+    // gzip, Set Content-Encoding headers and add .gz extension
+    .pipe(gulpif(/^(?!(.*index)).+\.html/, processHtml(), processStandard()))
 
-            // create a cache file to speed up consecutive uploads
-            .pipe(publisher.cache())
+    // create a cache file to speed up consecutive uploads
+    .pipe(publisher.cache())
 
-            // print upload updates to console
-            .pipe($.awspublish.reporter());
-        });
+    // print upload updates to console
+    .pipe($.awspublish.reporter());
+});
