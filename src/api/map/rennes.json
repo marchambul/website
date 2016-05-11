@@ -8,14 +8,14 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    -1.7055087,
-                    48.120682,
+                    -1.699399,
+                    48.100439,
                     0
                 ]
             },
             "properties": {
-                "name": "Villejean Université",
-                "description": "lundi : 16h00 - 17h30"
+                "name": "la Courrouze - secteur du bois habité ",
+                "description": "Mercredi : 16h30 - 17h30"
             }
         },
         {
@@ -23,14 +23,14 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    -1.7153319,
-                    48.114204,
+                -1.7071402,
+                    48.0937059,
                     0
                 ]
             },
             "properties": {
-                "name": "ZAC Atalante Champeaux",
-                "description": "lundi : 18h00 - 19h30"
+                "name": "la Courrouze - parking du secteur Domino ",
+                "description": "Mercredi : 17h30 - 19h00"
             }
         }
         ,
@@ -39,30 +39,14 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    -1.6757,
-                    48.09292,
+                    -1.6650551,
+                    48.0955053,
                     0
                 ]
             },
             "properties": {
-                "name": "Place de la communautée",
-                "description": "samedi : 10h00 - 11h00"
-            }
-        }
-        ,
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -1.6653434,
-                    48.0939127,
-                    0
-                ]
-            },
-            "properties": {
-                "name": "Place du souvenir",
-                "description": "samedi : 11h30 - 13h00"
+                "name": "Boulangerie du coin",
+                "description": "samedi : 10h30 - 13h00"
             }
         }
         ,
@@ -78,7 +62,7 @@
             },
             "properties": {
                 "name": "Place de la gare",
-                "description": "dimanche : 17h00 - 20h00"
+                "description": "dimanche : 17h00 - 19h00"
             }
         }
     ]

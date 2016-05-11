@@ -27,4 +27,36 @@ angular.module("marchambul", ['ui.router', 'ngSanitize'])
             event.preventDefault();
         }
     };
+
+    $rootScope.checkPanier = function(event, address, position, phone, jour){
+        console.log('address : '  + JSON.stringify(address));
+        console.log('position : '  + JSON.stringify(position));
+        console.log('phone : '  + JSON.stringify(phone));
+        console.log('jour : '  + JSON.stringify(jour));
+        if (phone && phone.match(/^[0-9]{10}$/)){
+            delete $rootScope.errorPhone;
+        }
+        else{
+            $rootScope.errorPhone = true;
+            event.preventDefault();
+        }
+
+        if (address){
+            delete $rootScope.errorAddress;
+        }
+        else{
+            $rootScope.errorAddress = true;
+            event.preventDefault();
+        }
+
+        if (jour){
+            delete $rootScope.errorDay;
+        }
+        else{
+            $rootScope.errorDay = true;
+            event.preventDefault();
+        }
+    };
+
+
 });

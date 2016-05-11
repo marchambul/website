@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html ng-app="marchambul">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="google-site-verification" content="WIZLZFbX5d3NIBv1LwmgCb3ReG45SS44WjGBtMXJbfc" />
+    <script src='https://api.mapbox.com/mapbox.js/v2.2.4/mapbox.js'></script>
+    <link href='https://api.mapbox.com/mapbox.js/v2.2.4/mapbox.css' rel='stylesheet' />
+
+    <title>Marchambul</title>
+    <!-- build:css(.tmp) css/vendor.css -->
+    <link rel="stylesheet" href="vendor.css">
+    <!-- bower:css -->
+    <!-- run `gulp wiredep` to automaticaly populate bower styles dependencies -->
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:css(.tmp) css/app.css -->
+    <!-- inject:css -->
+    <!-- css files will be automaticaly insert here -->
+    <!-- endinject -->
+    <!-- endbuild -->
+
+</head>
+
+<body>
+    <section ui-view>
+        <!-- <div ng-include="'/includes/navbar.html'"></div> -->
+        <!-- <div ng-include="'/panier/panier.tpl.html'"></div> -->
+        @@include('panier/panier.tpl.html')
+    </section>
+
+    <!-- <div ng-include="'includes/footer.html'"></div> -->
+    @@include('includes/footer.html')
+
+    <!-- build:js(.tmp) js/vendor.js -->
+    <!-- bower:js -->
+    <!-- run `gulp wiredep` to automaticaly populate bower script dependencies -->
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:js(.tmp) js/app.js -->
+    <!-- inject:js -->
+    <!-- js files will be automaticaly insert here -->
+    <!-- endinject -->
+    <!-- inject:partials -->
+    <!-- angular templates will be automatically converted in js and inserted here -->
+    <!-- endinject -->
+    <!-- endbuild -->
+</body>
+</html>

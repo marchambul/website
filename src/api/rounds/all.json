@@ -6,21 +6,21 @@
     "sellers": [
         {"name": "Cyril",
         "image": "img/temp/cyril.jpg",
-        "message": "Avis aux rennais, à partir de fin Mars je vous propose des légumes bio et de de saison <a target=\"_blank\" href=\"http://lesvilainsbruz.blogspot.fr/p/le-clos-renaud-venez-rencontrer-vos.html\">du Clos Renaud</a>",
+        "message": "Je vous propose des légumes bio et de saison <a target=\"_blank\" href=\"http://lesvilainsbruz.blogspot.fr/p/le-clos-renaud-venez-rencontrer-vos.html\">du Clos Renaud</a>",
         "rounds" : [
             {
                 "type": "Feature",
                 "geometry": {
                     "type": "Point",
                     "coordinates": [
-                        -1.7055087,
-                        48.120682,
+                        -1.699399,
+                        48.100439,
                         0
                     ]
                 },
                 "properties": {
-                    "place": "Villejean Université",
-                    "time": "lundi : 16h00 - 17h30"
+                    "place": "la Courrouze - secteur du bois habité ",
+                    "time": "Mercredi : 16h30 - 17h30"
                 }
             },
             {
@@ -28,46 +28,29 @@
                 "geometry": {
                     "type": "Point",
                     "coordinates": [
-                        -1.7153319,
-                        48.114204,
+                    -1.7071402,
+                        48.0937059,
                         0
                     ]
                 },
                 "properties": {
-                    "place": "ZAC Atalante Champeaux",
-                    "time": "lundi : 18h00 - 19h30"
+                    "place": "la Courrouze - parking du secteur Domino ",
+                    "time": "Mercredi : 17h30 - 19h00"
                 }
-            }
-            ,
+            },
             {
                 "type": "Feature",
                 "geometry": {
                     "type": "Point",
                     "coordinates": [
-                        -1.6757,
-                        48.09292,
+                        -1.6650551,
+                        48.0955053,
                         0
                     ]
                 },
                 "properties": {
-                    "place": "Place de la communautée",
-                    "time": "samedi : 10h00 - 11h00"
-                }
-            }
-            ,
-            {
-                "type": "Feature",
-                "geometry": {
-                    "type": "Point",
-                    "coordinates": [
-                        -1.6653434,
-                        48.0939127,
-                        0
-                    ]
-                },
-                "properties": {
-                    "place": "Place du souvenir",
-                    "time": "samedi : 11h30 - 13h00"
+                    "place": "Boulangerie du coin",
+                    "time": "samedi : 10h30 - 13h00"
                 }
             }
             ,
@@ -83,7 +66,7 @@
                 },
                 "properties": {
                     "place": "Place de la gare",
-                    "time": "dimanche : 17h00 - 20h00"
+                    "time": "dimanche : 17h00 - 19h00"
                 }
             }
         ]},
