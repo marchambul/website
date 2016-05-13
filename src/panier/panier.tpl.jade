@@ -3,16 +3,29 @@ section#panier
         h1.text-center.color-row-title Commandez votre panier BIO Marchambul
         h4.text-center Il n'y a aucun engagement, vous commandez quand vous voulez pour le Mercredi ou Samedi suivant
         img.panier(src='img/paniers/panier.svg')  
-        h4.text-center Un panier contient entre 3 et 4kg de légumes de saison fraichements cueillis <a target="_blank" href="http://lesvilainsbruz.blogspot.fr/p/le-clos-renaud-venez-rencontrer-vos.html">au Clos Renaud</a> + un pain bio de la <a target="_blank" href="http://www.boulangerieducoin.fr/"> boulangerie du coin</a>
+        h4.text-center Un panier contient environ 3kg de légumes de saison fraichements cueillis <a target="_blank" href="http://lesvilainsbruz.blogspot.fr/p/le-clos-renaud-venez-rencontrer-vos.html">au Clos Renaud</a> + un pain bio de la <a target="_blank" href="http://www.boulangerieducoin.fr/"> boulangerie du coin</a>
         
         h4.text-center
             img.marchambul-logo(src='img/icon.svg') 
             | le tout livré à vélo <span class="highlight-price">chez vous</span> (sur Rennes uniquement) pour <span class="highlight-price">15€</span>
+        
+        .hr-container
+            hr
+            label En ce moment
             
-        //.panel.panel-info.info-contenu-panier
-        //    i.fa.fa-info(aria-hidden="true")
-        //    span Cette semaine, le panier devrait contenir entre autre: une grosse salade batavia, des pommes de terres, des carottes nouvelles, des radis, des poireaux,etc...
-        //    
+        .panel.panel-info.info-contenu-panier
+            
+            p 
+                i.fa.fa-info-circle.fa-lg(aria-hidden="true")
+                span Cette semaine, le panier devrait contenir entre autre : 
+                ul
+                    li une grosse salade batavia
+                    li des pommes de terres
+                    li des carottes nouvelles
+                    li des radis
+                    li des poireaux
+                    li etc...
+               
         
         .hr-container
             hr
