@@ -28,11 +28,12 @@ angular.module("marchambul", ['ui.router', 'ngSanitize'])
         }
     };
 
-    $rootScope.checkPanier = function(event, address, position, phone, jour){
+    $rootScope.checkPanier = function(event, address, position, phone, jour, date){
         console.log('address : '  + JSON.stringify(address));
         console.log('position : '  + JSON.stringify(position));
         console.log('phone : '  + JSON.stringify(phone));
         console.log('jour : '  + JSON.stringify(jour));
+        console.log('date : '  + JSON.stringify(date));
         if (phone && phone.match(/^[0-9]{10}$/)){
             delete $rootScope.errorPhone;
         }

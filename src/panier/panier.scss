@@ -1,5 +1,28 @@
-section.container#panier{
+section#panier{
     min-height: 80vh;
+    background-color: #fefaee;
+
+    img.panier{
+        width:  20%;
+        display: block;
+        margin: 0 auto;
+    }
+
+    img.marchambul-logo{
+        width: 80px;
+        margin-right: 10px;
+    }
+
+    .info-contenu-panier{
+        opacity: 0.8;
+        margin-top: 15px;
+        i{
+            margin-right: 5px;
+        }
+        padding: 5px;
+        font-size: 1em;
+        color: #4f9fcf;
+    }
 
     .highlight-price{
         color:  darken(#EB9532, 5%);
@@ -28,7 +51,7 @@ section.container#panier{
     }
 
     .footer-btn{
-        margin: 0 3px;
+        margin: 0 3px 20px;
         font-size: 18px;
         text-transform: uppercase;
         background-color: transparent;
@@ -41,6 +64,26 @@ section.container#panier{
         &:hover{
             background-color: #6F532A;
             color: #fff;
+        }
+    }
+
+    .hr-container{
+        margin-top: 50px;
+
+        hr{
+            border-color: black;
+            margin-bottom: -15px;
+        }
+        label{
+            background-color:  rgb(254, 250, 238);
+            text-align: center;
+            padding: 0px 10px;
+            display: block;
+            width: 300px;
+            margin: auto;
+            text-transform: uppercase;
+            font-size: 22px;
+            font-weight: 300;
         }
     }
 
