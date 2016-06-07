@@ -1,13 +1,13 @@
 section#panier
     .container
         h1.text-center.color-row-title Commandez votre panier BIO Marchambul
-        h4.text-center Il n'y a aucun engagement, vous commandez quand vous voulez pour le Mercredi ou Samedi suivant
+        h4.text-center Il n'y a aucun engagement, vous commandez quand vous voulez pour le Samedi ou Dimanche suivant
         img.panier(src='img/paniers/panier.svg')  
-        h4.text-center Un panier contient environ 3kg de légumes bio et de saison fraîchement cueillis <a target="_blank" href="http://lesvilainsbruz.blogspot.fr/p/le-clos-renaud-venez-rencontrer-vos.html">au Clos Renaud</a> + un pain bio de la <a target="_blank" href="http://www.boulangerieducoin.fr/"> boulangerie du coin</a>
+        h4.text-center Un panier contient entre 3kg et 4kg de légumes bio et de saison fraîchement cueillis <a target="_blank" href="http://lesvilainsbruz.blogspot.fr/p/le-clos-renaud-venez-rencontrer-vos.html">au Clos Renaud</a> + un pain bio de la <a target="_blank" href="http://www.boulangerieducoin.fr/"> boulangerie du coin</a>
         
         h4.text-center
             img.marchambul-logo(src='img/icon.svg') 
-            | le tout livré à vélo <span class="highlight-price">chez vous</span> (sur Rennes uniquement) pour <span class="highlight-price">15€</span> (paiement en espèces/chèque à la réception)
+            | le tout livré à vélo <span class="highlight-price">chez vous</span> (sur Rennes uniquement) pour <span class="highlight-price">18€</span> (paiement en espèces/chèque à la réception)
             
         
         .hr-container
@@ -19,7 +19,7 @@ section#panier
                 .col-sm-6
                     p 
                         i.fa.fa-info-circle.fa-lg(aria-hidden="true")
-                        span Cette semaine, le panier a de fortes chances de contenir entre autre : 
+                        span En ce moment, le panier contient entre autres : 
                         ul
                             li une grosse salade batavia
                             li des pommes de terre nouvelles
@@ -27,17 +27,23 @@ section#panier
                             li des radis
                             li des concombres noha
                             li du persil
-                            li etc...
+                            li et autres nouveautés fraîchement recoltés...
                             
                 .col-sm-6
                     img.ex-panier(src='img/paniers/ex-panier.jpg') 
-                    p exemple de panier livré cette semaine
+                    p exemple de panier livré en ce moment
                
         
         .hr-container
             hr
-            label Je commande 1 panier à 15€
-        
+            label Je commande 1 panier à 18€
+            
+        .panel.panel-info.info-contenu-panier
+            i.fa.fa-info-circle.fa-lg(aria-hidden="true")
+            span Exceptionnellement Marchambul ne livrera pas les week-end du 11/12 juin et 18/19 juin.
+            br
+            span Prochaines livraisons les Samedi 25 et Dimanche 26 juin.
+
         
         .panier-container
             form.contact-option(action="//formspree.io/panier@marchambul.com" method="POST" ng-submit="checkPanier($event, address, position, phone, jour, date)")
@@ -69,10 +75,18 @@ section#panier
                     input(type="hidden" name="jour" value="{{jour}}")
                     input(type="hidden" name="date" value="{{date}}")
                     .livraison-options(calculate-next-date)
-                        .col-sm-6.panel.panel-default(ng-class="{'panel-selected':jour=='Mercredi'}", ng-click="jour='Mercredi';date=nextWedString")
-                            .panel-body Mercredi {{nextWedString}} entre 19h et 20h
-                        .col-sm-6.panel.panel-default(ng-class="{'panel-selected':jour=='Samedi'}", ng-click="jour='Samedi';date=nextSatString")
-                            .panel-body Samedi {{nextSatString}} entre 14h et 15h
+                        //.col-sm-4.panel.panel-default(ng-class="{'panel-selected':jour=='Mercredi'}", ng-click="jour='Mercredi';date=nextWedString")
+                        //    .panel-body Mercredi {{nextWedString}} entre 19h et 20h
+                        //.col-sm-4.panel.panel-default(ng-class="{'panel-selected':jour=='Samedi'}", ng-click="jour='Samedi';date=nextSatString")
+                        //    .panel-body Samedi {{nextSatString}} entre 13h et 14h
+                        //.col-sm-4.panel.panel-default(ng-class="{'panel-selected':jour=='Dimanche'}", ng-click="jour='Dimanche';date=nextSunString")
+                        //    .panel-body Dimanche {{nextSunString}} entre 19h et 20h
+                        //.col-sm-4.panel.panel-default(ng-class="{'panel-selected':jour=='Samedi 11h'}", ng-click="jour='Mercredi';date='18 juin'")
+                        //    .panel-body Mercredi 15 juin entre 19h et 20h
+                        .col-sm-6.panel.panel-default(ng-class="{'panel-selected':jour=='Samedi'}", ng-click="jour='Samedi';date='25 juin'")
+                            .panel-body Samedi 25 juin entre 13h et 14h
+                        .col-sm-6.panel.panel-default(ng-class="{'panel-selected':jour=='Dimanche'}", ng-click="jour='Dimanche';date='26 juin'")
+                            .panel-body Dimanche 26 juin entre 19h et 20h
                     span.errorDay(ng-if="errorDay") Il vous faut choisir un jour de livraison
                 button.footer-btn(
                     type="submit"

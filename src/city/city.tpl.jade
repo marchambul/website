@@ -1,5 +1,50 @@
-.container
-    .city-intro
-        h1 {{vm.i18n.title}}
-        h3 {{vm.i18n.description}}
-    round-map(city="{{vm.city}}")
+nav.navbar.navbar-default(role='navigation')
+  .container-fluid
+    .navbar-header
+      button.navbar-toggle(type='button', data-toggle='collapse', data-target='#bs-example-navbar-collapse-1')
+        span.sr-only Toggle navigation
+        span.icon-bar
+            
+        span.icon-bar
+        span.icon-bar
+      a.navbar-brand(href="http://www.marchambul.com" target="_blank")
+        img(src='img/logo.svg')
+        h1.slogan.hide-for-small-device le réseau de marchés ambulants à vélo
+    .collapse.navbar-collapse#bs-example-navbar-collapse-1
+        .nav.navbar-nav.navbar-right
+            a.navbar-button(href="paniers" target="_blank")  nos paniers bio
+            
+.city-intro
+    .container
+        h1 
+            img.marchambul-logo(src='img/icon-rennes.svg') 
+            | {{vm.i18n.title}}
+        h3 Des bons légumes fraîchement cueillis <a target="_blank" href="http://lesvilainsbruz.blogspot.fr/p/le-clos-renaud-venez-rencontrer-vos.html">au Clos Renaud à Bruz</a>
+        //h3 {{vm.i18n.description}}
+        round-map(city="{{vm.city}}")
+    
+section#contact-city
+    .container
+        h2 
+           img.marchambul-logo(src='img/prospects/any.svg') 
+           | Envie de rejoindre l'aventure Marchambul à Rennes?
+        
+        .contact-type
+            .contact-type--icon
+                object.contact-type-img(type="image/svg+xml" data="img/prospects/market.svg")
+            .contact-type--label
+                p En nous aidant à vendre des légumes.
+                
+        .contact-type
+            .contact-type--icon
+                object.contact-type-img(type="image/svg+xml" data="img/prospects/city.svg")
+            .contact-type--label
+                p En accueillant un mini-marché ambulant sur votre espace
+                
+    
+        img#down-arrow(src='img/concept/down.svg')  
+    
+    .contact-box.container
+        h3
+            span N'hésitez pas à nous contacter à l'adresse 
+            a.navbar-button(href='mailto:bonjour@marchambul.com?Subject=Bonjour%20Marchambul') bonjour@marchambul.com

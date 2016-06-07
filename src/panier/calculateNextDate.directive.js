@@ -18,12 +18,15 @@ function calculateNextDate () {
             // si on est avant Samedi
             if (day < 6) {
                 scope.nextSat = moment().day(6);
+                scope.nextSun = moment().day(7);
             }
             else {
                 scope.nextSat = moment().add(7, 'days').day(6);
+                scope.nextSun = moment().add(7, 'days').day(7);
             }
 
             scope.nextSatString = scope.nextSat.format('D MMMM');
+            scope.nextSunString = scope.nextSun.format('D MMMM');
         }
     };
 }

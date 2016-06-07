@@ -20,10 +20,10 @@
                     .infos(ng-hide="vm.toggled", ng-click="vm.fly(people.rounds[0])")
                         .info-line
                             i.fa.fa-fw.fa-map-marker 
-                            span.icon-label {{people.rounds[0].properties.place}}
+                            span.icon-label(ng-bind-html="people.rounds[0].properties.place")
                         .info-line
                             i.fa.fa-fw.fa-clock-o
-                            span.icon-label {{people.rounds[0].properties.time}}
+                            span.icon-label(ng-bind-html="people.rounds[0].properties.time")
                     hr.small-margin(ng-if="people.rounds.length > 1" ng-hide="vm.toggled")
                     a.card-bottom-link(ng-if="people.rounds.length > 1" ng-click="vm.toggled = true", ng-hide="vm.toggled")
                         i.fa.fa-eye
@@ -39,5 +39,5 @@
                                     span.icon-label Quand
                         tbody
                             tr(ng-repeat="round in people.rounds" ng-click="vm.fly(round)")
-                                td {{round.properties.place}}
-                                td {{round.properties.time}}
+                                td(ng-bind-html="round.properties.place")
+                                td(ng-bind-html="round.properties.time")

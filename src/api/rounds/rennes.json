@@ -6,38 +6,8 @@
     "sellers": [
         {"name": "Cyril",
         "image": "img/temp/cyril.jpg",
-        "message": "A partir de fin Mars je vous propose des légumes bio et de de saison <a target=\"_blank\" href=\"http://lesvilainsbruz.blogspot.fr/p/le-clos-renaud-venez-rencontrer-vos.html\">du Clos Renaud</a>",
+        "message": "<span class=\"highlight\">A partir du 25 juin</span>, retrouvez moi les Samedi et Dimanche matin dans le quartier Saint-Thérèze au niveau de la <a target=\"_blank\" href=\"http://www.boulangerieducoin.fr/\">Boulangerie du Coin</a> et à la Courrouze le Samedi après-midi (aire de jeux de la résidence Casé Alté). <br> Je vous propose des légumes bio et de saison <a target=\"_blank\" href=\"http://lesvilainsbruz.blogspot.fr/p/le-clos-renaud-venez-rencontrer-vos.html\">du Clos Renaud</a>.",
         "rounds" : [
-            {
-                "type": "Feature",
-                "geometry": {
-                    "type": "Point",
-                    "coordinates": [
-                        -1.699399,
-                        48.100439,
-                        0
-                    ]
-                },
-                "properties": {
-                    "place": "la Courrouze - secteur du bois habité ",
-                    "time": "Mercredi : 16h30 - 17h30"
-                }
-            },
-            {
-                "type": "Feature",
-                "geometry": {
-                    "type": "Point",
-                    "coordinates": [
-                    -1.7071402,
-                        48.0937059,
-                        0
-                    ]
-                },
-                "properties": {
-                    "place": "la Courrouze - parking du secteur Domino ",
-                    "time": "Mercredi : 17h30 - 19h00"
-                }
-            },
             {
                 "type": "Feature",
                 "geometry": {
@@ -50,23 +20,22 @@
                 },
                 "properties": {
                     "place": "Boulangerie du coin",
-                    "time": "samedi : 10h30 - 13h00"
+                    "time": "Samedi : 10h00 - 12h00<br/>Dimanche : 9h00 - 11h00"
                 }
-            }
-            ,
+            },
             {
                 "type": "Feature",
                 "geometry": {
                     "type": "Point",
                     "coordinates": [
-                        -1.6749384,
-                        48.1042241,
+                        -1.697,
+                        48.1,
                         0
                     ]
                 },
                 "properties": {
-                    "place": "Place de la gare",
-                    "time": "dimanche : 17h00 - 19h00"
+                    "place": "la Courrouze - aire de jeux résidence Casé Alté",
+                    "time": "Samedi : 14h00 - 16h00"
                 }
             }
         ]}

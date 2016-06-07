@@ -36,15 +36,19 @@
         margin: 10px;
         color:  rgba(0,0,0,0.6);
         vertical-align: sub;
-        //transition
-        margin-left:150px;
-        opacity: 0;
 
-        transition: all 1s;
-        &.loaded{
-            margin-left:0px;
-            opacity: 1;
-        }
+            &.motion{
+                //transition
+                margin-left:150px;
+                opacity: 0;
+
+                transition: all 1s;
+                &.loaded{
+                    margin-left:0px;
+                    opacity: 1;
+                }
+            }
+
 
     }
 }

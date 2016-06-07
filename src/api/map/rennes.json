@@ -8,37 +8,6 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    -1.699399,
-                    48.100439,
-                    0
-                ]
-            },
-            "properties": {
-                "name": "la Courrouze - secteur du bois habité ",
-                "description": "Mercredi : 16h30 - 17h30"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                -1.7071402,
-                    48.0937059,
-                    0
-                ]
-            },
-            "properties": {
-                "name": "la Courrouze - parking du secteur Domino ",
-                "description": "Mercredi : 17h30 - 19h00"
-            }
-        }
-        ,
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
                     -1.6650551,
                     48.0955053,
                     0
@@ -46,23 +15,22 @@
             },
             "properties": {
                 "name": "Boulangerie du coin",
-                "description": "samedi : 10h30 - 13h00"
+                "description": "Samedi : 10h00 - 12h00<br/>Dimanche : 9h00 - 11h00"
             }
-        }
-        ,
+        },
         {
             "type": "Feature",
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    -1.6749384,
-                    48.1042241,
+                    -1.697,
+                    48.1,
                     0
                 ]
             },
             "properties": {
-                "name": "Place de la gare",
-                "description": "dimanche : 17h00 - 19h00"
+                "name": "la Courrouze - aire de jeux résidence Casé Alté",
+                "description": "Samedi : 14h00 - 16h00"
             }
         }
     ]
