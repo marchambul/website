@@ -44,7 +44,7 @@ gulp.task('inject', ['sass','babel','jade'], function() {
             }
         };
     }))
-    .pipe(swig())
+    .pipe(swig({defaults:{autoescape: false}}))
     .pipe($.debug({title: 'injectStyles:'}))
     .pipe($.inject(gulp.src([paths.tmp + '/**/*.js']).pipe($.angularFilesort()),injectOptions))
     .pipe(wiredep())

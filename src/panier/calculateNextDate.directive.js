@@ -5,28 +5,29 @@ function calculateNextDate () {
         link: function (scope, element, attrs) {
             moment.locale('fr');
             let day = moment().day();
-            // si on est avant Mercredi
-            if (day < 3) {
-                scope.nextWed = moment().day(3);
-            }
-            else {
-                scope.nextWed = moment().add(7, 'days').day(3);
-            }
 
-            scope.nextWedString = scope.nextWed.format('D MMMM');
+            let days = {
+                nextSun : 0,
+                nextMon : 1,
+                nextTue : 2,
+                nextWed : 3,
+                nextThu : 4,
+                nextFri : 5,
+                nextSat : 6,
+            };
 
-            // si on est avant Samedi
-            if (day < 6) {
-                scope.nextSat = moment().day(6);
-                scope.nextSun = moment().day(7);
-            }
-            else {
-                scope.nextSat = moment().add(7, 'days').day(6);
-                scope.nextSun = moment().add(7, 'days').day(7);
-            }
+            for (let key in days){
+                // si on est avant ce jour
+                if (day < days[key]) {
+                    scope[key] = moment().day(days[key]);
+                }
+                else {
+                    scope[key] = moment().add(7, 'days').day(days[key]);
+                }
 
-            scope.nextSatString = scope.nextSat.format('D MMMM');
-            scope.nextSunString = scope.nextSun.format('D MMMM');
+                let stringKey = key + 'String';
+                scope[stringKey] = scope[key].format('D MMMM');
+            }
         }
     };
 }

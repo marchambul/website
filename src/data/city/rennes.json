@@ -1,4 +1,5 @@
 {
-    "title": "Marchambul à Rennes",
-    "description" : "Profitez de nos tournées et des légumes bio et de de saison de Bruz (le Clos Renaud)"
+    "city": "Rennes",
+    "logo": "img/icon-rennes.svg",
+    "description" : "Des bons légumes fraîchement cueillis <a target=\"_blank\" href=\"http://lesvilainsbruz.blogspot.fr/p/le-clos-renaud-venez-rencontrer-vos.html\">au Clos Renaud à Bruz</a>"
 }

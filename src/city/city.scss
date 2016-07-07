@@ -39,6 +39,12 @@ $contact-background: $background;
 
 section#contact-city{
 
+    h2{
+        text-align: center;
+        margin-bottom: 50px;
+        margin-top: 50px;
+    }
+
     margin-top: 50px;
     background-color: $background;
 
@@ -63,10 +69,6 @@ section#contact-city{
         a{
             color:$orange;
         }
-    }
-
-    h2{
-        margin-top: 50px;
     }
 
     img.marchambul-logo{

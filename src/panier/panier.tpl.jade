@@ -1,7 +1,7 @@
 section#panier
     .container
         h1.text-center.color-row-title Commandez votre panier BIO Marchambul
-        h4.text-center Il n'y a aucun engagement, vous commandez quand vous voulez pour le Samedi ou Dimanche suivant
+        h4.text-center Il n'y a aucun engagement, vous commandez la veille pour le lendemain
         img.panier(src='img/paniers/panier.svg')  
         h4.text-center Un panier contient entre 3kg et 4kg de légumes bio et de saison fraîchement cueillis <a target="_blank" href="http://lesvilainsbruz.blogspot.fr/p/le-clos-renaud-venez-rencontrer-vos.html">au Clos Renaud</a> + un pain bio de la <a target="_blank" href="http://www.boulangerieducoin.fr/"> boulangerie du coin</a>
         
@@ -40,13 +40,21 @@ section#panier
             
         .panel.panel-info.info-contenu-panier
             i.fa.fa-info-circle.fa-lg(aria-hidden="true")
-            span Exceptionnellement Marchambul ne livrera pas les week-end du 11/12 juin et 18/19 juin.
-            br
-            span Prochaines livraisons les Samedi 25 et Dimanche 26 juin.
-
+            span Pour l'instant nous ne livrons nos paniers que sur les communes de Bretigny, Arpajon et Saint-Germain-lès-Arpajon.
+        
         
         .panier-container
-            form.contact-option(action="//formspree.io/panier@marchambul.com" method="POST" ng-submit="checkPanier($event, address, position, phone, jour, date)")
+            form.contact-option(action="//formspree.io/panier@marchambul.com" method="POST" ng-submit="checkPanier($event, address, position, phone, creneau, date, ville)")
+                .form-group
+                    label J'habite à
+                    .livraison-options
+                        .col-sm-4.panel.panel-default(ng-class="{'panel-selected':ville=='Bretigny'}", ng-click="ville='Bretigny';creneau=null;")
+                            .panel-body Bretigny-Sur-orge
+                        .col-sm-4.panel.panel-default(ng-class="{'panel-selected':ville=='Arpajon'}", ng-click="ville='Arpajon';creneau=null;")
+                            .panel-body Arpajon
+                        .col-sm-4.panel.panel-default(ng-class="{'panel-selected':ville=='SGA'}", ng-click="ville='SGA';creneau=null;")
+                            .panel-body Saint-Germain-lès-Arpajon
+                    span.errorAddress(ng-if="errorVille") Il vous faut choisir une ville de livraison
                 .row
                     .col-sm-6
                         .form-group
@@ -70,24 +78,37 @@ section#panier
                         ng-model="phone"
                         placeholder="Nous vous appelerons lorsque nous arrivons devant chez vous")
                     span.errorEmail(ng-if="errorPhone") Le format du numéro de téléphone est incorrect
-                .form-group
+                .form-group(ng-show="ville")
                     label Je souhaite être livré le
-                    input(type="hidden" name="jour" value="{{jour}}")
+                    input(type="hidden" name="creneau" value="{{creneau}}")
                     input(type="hidden" name="date" value="{{date}}")
+                    input(type="hidden" name="ville" value="{{ville}}")
                     .livraison-options(calculate-next-date)
-                        //.col-sm-4.panel.panel-default(ng-class="{'panel-selected':jour=='Mercredi'}", ng-click="jour='Mercredi';date=nextWedString")
-                        //    .panel-body Mercredi {{nextWedString}} entre 19h et 20h
-                        //.col-sm-4.panel.panel-default(ng-class="{'panel-selected':jour=='Samedi'}", ng-click="jour='Samedi';date=nextSatString")
-                        //    .panel-body Samedi {{nextSatString}} entre 13h et 14h
-                        //.col-sm-4.panel.panel-default(ng-class="{'panel-selected':jour=='Dimanche'}", ng-click="jour='Dimanche';date=nextSunString")
-                        //    .panel-body Dimanche {{nextSunString}} entre 19h et 20h
-                        //.col-sm-4.panel.panel-default(ng-class="{'panel-selected':jour=='Samedi 11h'}", ng-click="jour='Mercredi';date='18 juin'")
-                        //    .panel-body Mercredi 15 juin entre 19h et 20h
-                        .col-sm-6.panel.panel-default(ng-class="{'panel-selected':jour=='Samedi'}", ng-click="jour='Samedi';date='25 juin'")
-                            .panel-body Samedi 25 juin entre 13h et 14h
-                        .col-sm-6.panel.panel-default(ng-class="{'panel-selected':jour=='Dimanche'}", ng-click="jour='Dimanche';date='26 juin'")
-                            .panel-body Dimanche 26 juin entre 19h et 20h
-                    span.errorDay(ng-if="errorDay") Il vous faut choisir un jour de livraison
+                        div(ng-show="ville == 'Bretigny'")
+                            .col-sm-3.panel.panel-default(ng-class="{'panel-selected':creneau=='Mardi 11h-12h'}", ng-click="creneau='Mardi 11h-12h';date=nextTueString")
+                                .panel-body mardi {{nextTueString}} entre 11h et 12h
+                            .col-sm-3.panel.panel-default(ng-class="{'panel-selected':creneau=='Mardi 14h-16h'}", ng-click="creneau='Mardi 14h-16h';date=nextTueString")
+                                .panel-body mardi {{nextTueString}} entre 14h et 16h
+                            .col-sm-3.panel.panel-default(ng-class="{'panel-selected':creneau=='Mercredi 14h-15h'}", ng-click="creneau='Mercredi 14h-15h';date=nextWedString")
+                                .panel-body Mercredi {{nextWedString}} entre 14h et 15h
+                            .col-sm-3.panel.panel-default(ng-class="{'panel-selected':creneau=='Vendredi 12h-14h'}", ng-click="creneau='Vendredi 12h-14h';date=nextFriString")
+                                .panel-body Vendredi {{nextFriString}} entre 12h et 14h
+                                
+                                
+                        div(ng-show="ville == 'Arpajon'")
+                            .col-sm-6.panel.panel-default(ng-class="{'panel-selected':creneau=='Mercredi 15h-17h'}", ng-click="creneau='Mercredi 15h-17h';date=nextWedString")
+                                .panel-body Mercredi {{nextWedString}} entre 15h et 17h
+                            .col-sm-6.panel.panel-default(ng-class="{'panel-selected':creneau=='Vendredi 14h-16h'}", ng-click="creneau='Vendredi 14h-16h';date=nextFriString")
+                                .panel-body Vendredi {{nextFriString}} entre 14h et 16h
+                                
+                        div(ng-show="ville == 'SGA'")
+                            .col-sm-6.panel.panel-default(ng-class="{'panel-selected':creneau=='Mercredi 17h-18h'}", ng-click="creneau='Mercredi 17h-18h';date=nextWedString")
+                                .panel-body Mercredi {{nextWedString}} entre 17h et 18h
+                            .col-sm-6.panel.panel-default(ng-class="{'panel-selected':creneau=='Vendredi 10h-12h'}", ng-click="creneau='Vendredi 10h-12h';date=nextFriString")
+                                .panel-body Vendredi {{nextFriString}} entre 10h et 12h
+                                
+                        
+                    span.errorDay(ng-if="errorDay") Il vous faut choisir un créneau de livraison
                 button.footer-btn(
                     type="submit"
                     ) Envoyer

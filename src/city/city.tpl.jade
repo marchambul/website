@@ -17,17 +17,14 @@ nav.navbar.navbar-default(role='navigation')
 .city-intro
     .container
         h1 
-            img.marchambul-logo(src='img/icon-rennes.svg') 
-            | {{vm.i18n.title}}
-        h3 Des bons légumes fraîchement cueillis <a target="_blank" href="http://lesvilainsbruz.blogspot.fr/p/le-clos-renaud-venez-rencontrer-vos.html">au Clos Renaud à Bruz</a>
-        //h3 {{vm.i18n.description}}
+            img.marchambul-logo(src='{{vm.i18n.logo}}') 
+            | Marchambul à {{vm.i18n.city}}
+        h3 {{vm.i18n.description}}
         round-map(city="{{vm.city}}")
     
 section#contact-city
     .container
-        h2 
-           img.marchambul-logo(src='img/prospects/any.svg') 
-           | Envie de rejoindre l'aventure Marchambul à Rennes?
+        h2 Envie de rejoindre l'aventure Marchambul à {{vm.i18n.city}}?
         
         .contact-type
             .contact-type--icon

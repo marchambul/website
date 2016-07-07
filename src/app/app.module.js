@@ -28,17 +28,27 @@ angular.module("marchambul", ['ui.router', 'ngSanitize'])
         }
     };
 
-    $rootScope.checkPanier = function(event, address, position, phone, jour, date){
+    $rootScope.checkPanier = function(event, address, position, phone, creneau, date, ville){
         console.log('address : '  + JSON.stringify(address));
         console.log('position : '  + JSON.stringify(position));
         console.log('phone : '  + JSON.stringify(phone));
-        console.log('jour : '  + JSON.stringify(jour));
+        console.log('creneau : '  + JSON.stringify(creneau));
         console.log('date : '  + JSON.stringify(date));
+        console.log('ville : '  + JSON.stringify(ville));
         if (phone && phone.match(/^[0-9]{10}$/)){
             delete $rootScope.errorPhone;
         }
         else{
             $rootScope.errorPhone = true;
+            event.preventDefault();
+        }
+
+
+        if (ville){
+            delete $rootScope.errorVille;
+        }
+        else{
+            $rootScope.errorVille = true;
             event.preventDefault();
         }
 
@@ -50,7 +60,7 @@ angular.module("marchambul", ['ui.router', 'ngSanitize'])
             event.preventDefault();
         }
 
-        if (jour){
+        if (creneau){
             delete $rootScope.errorDay;
         }
         else{
