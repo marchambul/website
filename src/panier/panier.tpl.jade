@@ -1,13 +1,13 @@
 section#panier
     .container
-        h1.text-center.color-row-title Commandez votre panier BIO Marchambul
+        h1.text-center.color-row-title Commandez votre panier BIO
         h4.text-center Il n'y a aucun engagement, vous commandez la veille pour le lendemain
-        img.panier(src='img/paniers/panier.svg')  
-        h4.text-center Un panier contient entre 3kg et 4kg de légumes bio et de saison fraîchement cueillis <a target="_blank" href="http://lesvilainsbruz.blogspot.fr/p/le-clos-renaud-venez-rencontrer-vos.html">au Clos Renaud</a> + un pain bio de la <a target="_blank" href="http://www.boulangerieducoin.fr/"> boulangerie du coin</a>
-        
+        img.panier(src='img/paniers/panier.svg')
+        h4.text-center Un panier contient entre 3kg et 4kg de légumes et fruits de saison fraîchement cueillis à Torfou.
         h4.text-center
             img.marchambul-logo(src='img/icon.svg') 
-            | le tout livré à vélo <span class="highlight-price">chez vous</span> (sur Rennes uniquement) pour <span class="highlight-price">18€</span> (paiement en espèces/chèque à la réception)
+            | le tout livré à vélo <span class="highlight-price">chez vous</span> (Arpajon, Saint-Germain-Les-Arpajon et Brétigny-sur-Orge uniquement) pour <span class="highlight-price">18€</span> (paiement en espèces/chèque à la réception).
+        h4.text-center Il y a également possibilité d'ajouter 6 oeufs pour 2,5 € supplémentaire
             
         
         .hr-container
@@ -21,12 +21,11 @@ section#panier
                         i.fa.fa-info-circle.fa-lg(aria-hidden="true")
                         span En ce moment, le panier contient entre autres : 
                         ul
-                            li une grosse salade batavia
+                            li une salade 
+                            li des courgettes
+                            li des tomates
                             li des pommes de terre nouvelles
-                            li des carottes nouvelles
-                            li des radis
-                            li des concombres noha
-                            li du persil
+                            li des fraises
                             li et autres nouveautés fraîchement recoltés...
                             
                 .col-sm-6
@@ -44,7 +43,7 @@ section#panier
         
         
         .panier-container
-            form.contact-option(action="//formspree.io/panier@marchambul.com" method="POST" ng-submit="checkPanier($event, address, position, phone, creneau, date, ville)")
+            form.contact-option(action="//formspree.io/lepotagerroulant@gmail.com" method="POST" ng-submit="checkPanier($event, address, position, phone, creneau, date, ville)")
                 .form-group
                     label J'habite à
                     .livraison-options
@@ -117,6 +116,6 @@ section#panier
             hr
             label Une question à propos des paniers ?
             
-            h3.text-center Envoyez nous un email à <span class="highlight-price">panier@marchambul.com</span> 
+            h3.text-center Envoyez un email à <span class="highlight-price">lepotagerroulant@gmail.com</span> 
         br
         br

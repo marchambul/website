@@ -10,8 +10,8 @@ function geocomplete(LazyLoadApiService) {
               };
             scope.autocomplete = new google.maps.places.Autocomplete(element[0],options);
             scope.map = new google.maps.Map(document.getElementById(attrs.mapId), {
-              center: {lat: 48.1046985, lng:-1.6745},
-              zoom: 12
+              center: {lat: 48.59, lng:2.25},
+              zoom: 14
             });
             scope.marker = new google.maps.Marker({
               map: scope.map,
