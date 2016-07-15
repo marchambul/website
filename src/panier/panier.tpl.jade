@@ -53,12 +53,14 @@ section#panier
                       option(value="1") 1 panier
                       option(value="2") 2 paniers
                       option(value="3") 3 paniers
-                    label &nbsp;  
+                    label &nbsp; 
                     select.form-control.inherit-width(name="oeufs" id="oeufs" ng-model="vm.oeufs" )
-                        option(value="1") avec des oeufs
-                        option(value="0") sans les oeufs
+                        option(value="0") sans oeufs
+                        option(value="1") avec 6 oeufs
+                        option(value="2") avec 12 oeufs
+                        option(value="3") avec 18 oeufs
                     label &nbsp;&nbsp;pour&nbsp;&nbsp;
-                    label.highlight-price {{vm.nombrePaniers * (17 + vm.oeufs * 2.5) }} €
+                    label.highlight-price {{vm.nombrePaniers * 17 + vm.oeufs * 2.5 }} €
                 .form-group
                     label J'habite à
                     .livraison-options
