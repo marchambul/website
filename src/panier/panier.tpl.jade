@@ -35,15 +35,30 @@ section#panier
         
         .hr-container
             hr
-            label Je commande 1 panier à 17€
+            label Je commande
             
         .panel.panel-info.info-contenu-panier
             i.fa.fa-info-circle.fa-lg(aria-hidden="true")
             span Pour l'instant nous ne livrons nos paniers que sur les communes de Bretigny, Arpajon et Saint-Germain-lès-Arpajon.
+            
+            
+            
         
         
         .panier-container
             form.contact-option(action="//formspree.io/lepotagerroulant@gmail.com" method="POST" ng-submit="checkPanier($event, address, position, phone, creneau, date, ville)")
+                .form-group(ng-init="vm.nombrePaniers='1';vm.oeufs='0';")
+                    label Je souhaite&nbsp;&nbsp;
+                    select.form-control.inherit-width(name="paniers" id="paniers" ng-model="vm.nombrePaniers" )
+                      option(value="1") 1 panier
+                      option(value="2") 2 paniers
+                      option(value="3") 3 paniers
+                    label &nbsp;  
+                    select.form-control.inherit-width(name="oeufs" id="oeufs" ng-model="vm.oeufs" )
+                        option(value="1") avec des oeufs
+                        option(value="0") sans les oeufs
+                    label &nbsp;&nbsp;pour&nbsp;&nbsp;
+                    label.highlight-price {{vm.nombrePaniers * (17 + vm.oeufs * 2.5) }} €
                 .form-group
                     label J'habite à
                     .livraison-options

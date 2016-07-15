@@ -16,6 +16,10 @@ span.highlight{
     color:  darken(#EB9532, 5%);
     font-weight: bold;
 }
+.inherit-width{
+    width: inherit !important;
+    display: inline-block;
+}
 
 
 .no-padding{
