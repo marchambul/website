@@ -82,16 +82,23 @@ section#panier
                     input(type="hidden" name="date" value="{{date}}")
                     input(type="hidden" name="ville" value="{{ville}}")
                     .livraison-options(calculate-next-date)
-                        label(ng-show="ville == 'Bretigny'", ng-init="creneau='Vendredi 10h-16h';date=nextFriString") Je serai livré le Vendredi {{nextFriString}} entre 10h et 16h
-                        label(ng-show="ville == 'Arpajon' || ville == 'SGA'") Je souhaite être livré le        
+                        label Je souhaite être livré le  
+                        
+                        div(ng-show="ville == 'Bretigny'")
+                            .col-sm-6.panel.panel-default(ng-class="{'panel-selected':creneau=='Vendredi 10h-13h'}", ng-click="creneau='Vendredi 10h-13h';date=nextFriString")
+                                .panel-body Vendredi {{nextFriString}} entre 10h et 13h
+                            .col-sm-6.panel.panel-default(ng-class="{'panel-selected':creneau=='Vendredi 13h-16h'}", ng-click="creneau='Vendredi 13h-16h';date=nextFriString")
+                                .panel-body Vendredi {{nextFriString}} entre 13h et 16h
                                 
                         div(ng-show="ville == 'Arpajon' || ville == 'SGA'")
-                            .col-sm-4.panel.panel-default(ng-class="{'panel-selected':creneau=='Mercredi 11h-14h'}", ng-click="creneau='Mercredi 11h-14h';date=nextWedString")
+                            .col-sm-6.col-lg-3.panel.panel-default(ng-class="{'panel-selected':creneau=='Mercredi 11h-14h'}", ng-click="creneau='Mercredi 11h-14h';date=nextWedString")
                                 .panel-body Mercredi {{nextWedString}} entre 11h et 14h
-                            .col-sm-4.panel.panel-default(ng-class="{'panel-selected':creneau=='Jeudi 17h-19h'}", ng-click="creneau='Jeudi 17h-19h';date=nextThuString")
+                            .col-sm-6.col-lg-3.panel.panel-default(ng-class="{'panel-selected':creneau=='Jeudi 17h-19h'}", ng-click="creneau='Jeudi 17h-19h';date=nextThuString")
                                 .panel-body Jeudi {{nextThuString}} entre 17h-19h
-                            .col-sm-4.panel.panel-default(ng-class="{'panel-selected':creneau=='Vendredi 10h-16h'}", ng-click="creneau='Vendredi 10h-16h';date=nextFriString")
-                                .panel-body Vendredi {{nextFriString}} entre 10h et 16h
+                            .col-sm-6.col-lg-3.panel.panel-default(ng-class="{'panel-selected':creneau=='Vendredi 10h-13h'}", ng-click="creneau='Vendredi 10h-13h';date=nextFriString")
+                                .panel-body Vendredi {{nextFriString}} entre 10h et 13h
+                            .col-sm-6.col-lg-3.panel.panel-default(ng-class="{'panel-selected':creneau=='Vendredi 13h-16h'}", ng-click="creneau='Vendredi 13h-16h';date=nextFriString")
+                                .panel-body Vendredi {{nextFriString}} entre 13h et 16h
                         
                     span.errorDay(ng-if="errorDay") Il vous faut choisir un créneau de livraison
                     
