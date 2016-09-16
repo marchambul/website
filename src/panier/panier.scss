@@ -41,6 +41,13 @@ section#panier{
     }
 
     .livraison-options{
+        .panel{
+            margin-bottom: 0;
+            &:last-child{
+                margin-bottom: 20px;
+            }
+        }
+
         .panel-selected,.panel-default:hover{
             background-color: darken(#EB9532, 5%);
             cursor:pointer;

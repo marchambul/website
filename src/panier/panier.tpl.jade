@@ -1,18 +1,21 @@
 section#panier
     .container
         h1.text-center.color-row-title Commandez votre panier BIO "Potager roulant" 
-        h4.text-center Il n'y a aucun engagement, il suffit de commander au minimum 2 jours en avance
+        h4.text-center Il n'y a aucun engagement, il suffit de commander avant le mardi soir.
         img.panier(src='img/paniers/panier.svg')
-        h4.text-center Un panier contient entre 3kg et 4kg de légumes et fruits de saison BIO fraîchement cueillis à Torfou.
+        h4.text-center Un panier contient des légumes et fruits de saison BIO fraîchement cueillis.
         h4.text-center
             img.marchambul-logo(src='img/icon.svg') 
-            | le tout livré à vélo <span class="highlight-price">chez vous</span> (Arpajon, Saint-Germain-Les-Arpajon et Brétigny-sur-Orge uniquement) pour <span class="highlight-price">18€</span> (paiement en espèces/chèque à la réception). 
-        
+            | le tout livré à vélo <span class="highlight-price">chez vous</span> (Arpajon, Saint-Germain-Les-Arpajon, Bruyère le Chatel, La Norville et Brétigny-sur-Orge uniquement).
+        h4.text-center Un grand panier contient environ 4kg de fruits et légumes et coûte <span class="highlight-price">17€ </span>
+        h4.text-center Un petit panier contient environ 3kg de fruits et légumes et coûte <span class="highlight-price">13€ </span>
         h4.text-center Il y a également possibilité d'ajouter 6 oeufs pour 2,6 € supplémentaire
+        h4.text-center Le paiement s'effectue en espèces/chèque à la réception
+        
         
         .panel.panel-info.info-contenu-panier
             i.fa.fa-info-circle.fa-lg(aria-hidden="true")
-            span A noter que la livraison vous est offerte en Septembre (frais supplémentaires de 5€ le reste de l'année)
+            span A noter que la livraison vous est offerte en Septembre (frais supplémentaires de 1€ le reste de l'année)
             
         
         .hr-container
@@ -54,6 +57,12 @@ section#panier
             form.contact-option(action="//formspree.io/lepotagerroulant@gmail.com" method="POST" ng-submit="checkPanier($event, address, position, phone, creneau, date, ville)")
                 .form-group(ng-init="vm.nombrePaniers='1';vm.oeufs='0';")
                     label Je souhaite&nbsp;&nbsp;
+                    .livraison-options.row
+                        input(type="hidden" name="typePanier" value="{{typePanier}}")
+                        .col-sm-6.panel.panel-default(ng-class="{'panel-selected':typePanier=='Grand'}", ng-click="typePanier='Grand';")
+                            .panel-body Grand Panier (17€)
+                        .col-sm-6.panel.panel-default(ng-class="{'panel-selected':typePanier=='Petit'}", ng-click="typePanier='Petit';")
+                            .panel-body Petit Panier (13€)
                     select.form-control.inherit-width(name="paniers" id="paniers" ng-model="vm.nombrePaniers" )
                       option(value="1") 1 panier
                       option(value="2") 2 paniers
@@ -65,16 +74,21 @@ section#panier
                         option(value="2") avec 12 oeufs
                         option(value="3") avec 18 oeufs
                     label &nbsp;&nbsp;pour&nbsp;&nbsp;
-                    label.highlight-price {{vm.nombrePaniers * 18 + vm.oeufs * 2.6 }} €
+                    label.highlight-price(ng-if="typePanier=='Grand'") {{vm.nombrePaniers * 17 + vm.oeufs * 2.6 }} €
+                    label.highlight-price(ng-if="typePanier=='Petit'") {{vm.nombrePaniers * 13 + vm.oeufs * 2.6 }} €
                 .form-group
                     label J'habite à
-                    .livraison-options
-                        .col-sm-4.panel.panel-default(ng-class="{'panel-selected':ville=='Bretigny'}", ng-click="ville='Bretigny';creneau=null;")
+                    .livraison-options.row
+                        .col-sm-6.panel.panel-default(ng-class="{'panel-selected':ville=='Bretigny'}", ng-click="ville='Bretigny';creneau=null;")
                             .panel-body Bretigny-Sur-orge
-                        .col-sm-4.panel.panel-default(ng-class="{'panel-selected':ville=='Arpajon'}", ng-click="ville='Arpajon';creneau=null;")
+                        .col-sm-6.panel.panel-default(ng-class="{'panel-selected':ville=='Arpajon'}", ng-click="ville='Arpajon';creneau=null;")
                             .panel-body Arpajon
-                        .col-sm-4.panel.panel-default(ng-class="{'panel-selected':ville=='SGA'}", ng-click="ville='SGA';creneau=null;")
+                        .col-sm-6.panel.panel-default(ng-class="{'panel-selected':ville=='SGA'}", ng-click="ville='SGA';creneau=null;")
                             .panel-body Saint-Germain-lès-Arpajon
+                        .col-sm-6.panel.panel-default(ng-class="{'panel-selected':ville=='BLC'}", ng-click="ville='BLC';creneau=null;")
+                            .panel-body Bruyère le Chatel
+                        .col-sm-6.panel.panel-default(ng-class="{'panel-selected':ville=='Norville'}", ng-click="ville='Norville';creneau=null;")
+                            .panel-body La Norville
                     span.errorAddress(ng-if="errorVille") Il vous faut choisir une ville de livraison
                     
                 .form-group(ng-show="ville")
@@ -82,22 +96,23 @@ section#panier
                     input(type="hidden" name="date" value="{{date}}")
                     input(type="hidden" name="ville" value="{{ville}}")
                     .livraison-options(calculate-next-date)
-                        label Je souhaite être livré le  
+                        label(ng-if="ville !== 'BLC'") Je souhaite être livré le  
+                        
+                        label(ng-if="ville == 'BLC'", ng-init="creneau='Vendredi 10h-13h';date=nextFriString") Je serai livré Vendredi {{nextFriString}} entre 10h et 13h
                         
                         div(ng-show="ville == 'Bretigny'")
                             .col-sm-6.panel.panel-default(ng-class="{'panel-selected':creneau=='Vendredi 10h-13h'}", ng-click="creneau='Vendredi 10h-13h';date=nextFriString")
                                 .panel-body Vendredi {{nextFriString}} entre 10h et 13h
                             .col-sm-6.panel.panel-default(ng-class="{'panel-selected':creneau=='Vendredi 13h-16h'}", ng-click="creneau='Vendredi 13h-16h';date=nextFriString")
                                 .panel-body Vendredi {{nextFriString}} entre 13h et 16h
-                                
-                        div(ng-show="ville == 'Arpajon' || ville == 'SGA'")
-                            .col-sm-6.col-lg-3.panel.panel-default(ng-class="{'panel-selected':creneau=='Mercredi 11h-14h'}", ng-click="creneau='Mercredi 11h-14h';date=nextWedString")
+                        div(ng-show="ville == 'Arpajon' || ville == 'SGA' || ville == 'Norville'")
+                            .col-sm-6.col-lg-6.panel.panel-default(ng-class="{'panel-selected':creneau=='Mercredi 11h-14h'}", ng-click="creneau='Mercredi 11h-14h';date=nextWedString")
                                 .panel-body Mercredi {{nextWedString}} entre 11h et 14h
-                            .col-sm-6.col-lg-3.panel.panel-default(ng-class="{'panel-selected':creneau=='Jeudi 17h-19h'}", ng-click="creneau='Jeudi 17h-19h';date=nextThuString")
+                            .col-sm-6.col-lg-6.panel.panel-default(ng-class="{'panel-selected':creneau=='Jeudi 17h-19h'}", ng-click="creneau='Jeudi 17h-19h';date=nextThuString")
                                 .panel-body Jeudi {{nextThuString}} entre 17h-19h
-                            .col-sm-6.col-lg-3.panel.panel-default(ng-class="{'panel-selected':creneau=='Vendredi 10h-13h'}", ng-click="creneau='Vendredi 10h-13h';date=nextFriString")
+                            .col-sm-6.col-lg-6.panel.panel-default(ng-class="{'panel-selected':creneau=='Vendredi 10h-13h'}", ng-click="creneau='Vendredi 10h-13h';date=nextFriString")
                                 .panel-body Vendredi {{nextFriString}} entre 10h et 13h
-                            .col-sm-6.col-lg-3.panel.panel-default(ng-class="{'panel-selected':creneau=='Vendredi 13h-16h'}", ng-click="creneau='Vendredi 13h-16h';date=nextFriString")
+                            .col-sm-6.col-lg-6.panel.panel-default(ng-class="{'panel-selected':creneau=='Vendredi 13h-16h'}", ng-click="creneau='Vendredi 13h-16h';date=nextFriString")
                                 .panel-body Vendredi {{nextFriString}} entre 13h et 16h
                         
                     span.errorDay(ng-if="errorDay") Il vous faut choisir un créneau de livraison
@@ -125,7 +140,13 @@ section#panier
                         ng-model="phone"
                         placeholder="Nous vous appelerons lorsque nous arrivons devant chez vous")
                     span.errorEmail(ng-if="errorPhone") Le format du numéro de téléphone est incorrect
-                
+                .form-group
+                    label Commentaire
+                    textarea.form-control(
+                        rows="4"
+                        name="comment"
+                        ng-model="comment"
+                        placeholder="Un détail important à signaler?")
                 button.footer-btn(
                     type="submit"
                     ) Envoyer
