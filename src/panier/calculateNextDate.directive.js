@@ -17,8 +17,8 @@ function calculateNextDate () {
             };
 
             for (let key in days){
-                // si on est avant le Mercredi
-                if (day < 3) {
+                // si on est avant le Mercredi et au moins 2 jours avant
+                if (day < 3 && day < (days[key] - 1)) {
                     scope[key] = moment().day(days[key]);
                 }
                 else {
